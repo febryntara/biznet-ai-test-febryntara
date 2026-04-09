@@ -1,0 +1,136 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+
+# Data files (kecuali yang penting)
+data/processed/
+data/raw_backup/
+
+# Feedback logs (bisa di-generate ulang)
+feedback_log.csv
+
+# Backup files
+*.bak
+*.backup
+
+# Training artifacts - HANYA model utama yang dipertahankan
+models/customer_classifier_retrained.pkl  # Model retrained, bisa dibuat ulang
+
+# Documentation files (bisa dibuat ulang)
+example_usage.md
+INSTALL_GUIDE.md
+INSTALL.md
+PROJECT_SUMMARY.md
+README_SUMMARY.md
+RETRAINING_EXPLAINED.md
+SOAL_1_REQUIREMENTS_CHECK.md
+TEST_CHECKLIST.md
+
+# Script testing
+quick_test.py
+
+# File testing sementara
+test_*.csv
+temp_*.csv
+sample_output.csv
+sample_test.csv
+sample_test_predictions.csv
+batch_feedback_sample_results.csv
+batch_feedback_sample.txt
+test_tricky_cases_results.csv
+test_tricky_cases.txt
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Profiling
+.prof
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+docker-compose.override.yml
+
+# Database
+*.db
+*.sqlite3
+
+# MLflow
+mlruns/
+
+# DVC
+.dvc/
+
+# Pre-commit
+.pre-commit-config.yaml
