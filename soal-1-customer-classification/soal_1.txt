@@ -1,0 +1,44 @@
+1.​ Project Python - Klasifikasi Pesan Pelanggan
+Konteks: Sebagai pegawai yang bekerja di perusahaan yang bergerak dalam bidang ISP,
+Anda akan menerima ribuan pesan pelanggan (melalui email, obrolan, tiket) setiap hari.
+Menganalisis pesan yang masuk secara cepat sangat penting untuk mengklasifikasikan
+masalah ke departemen / divisi yang tepat.
+Ketentuan:
+●​ Buatlah ML (Machine Learning) Model menggunakan python yang dapat
+mengklasifikasikan pertanyaan customer ke dalam beberapa kategori yang telah
+ditentukan.
+●​ Lengkapi kode dengan komentar yang menjelaskan fungsi dari kode tersebut.
+●​ Tidak ada batasan dalam penggunaan metode maupun fungsi untuk pengerjaan
+project
+Tugas:
+●​ Tentukan jumlah data yang akan digunakan untuk process training dan testing
+(Peserta bebas menentukan total data yang digunakan).
+●​ Silahkan lakukan Preprocessing terhadap dataset tersebut.
+●​ Lakukan proses pelabelan data desuai dengan kategori berikut:○​ Information
+Merupakan kategori yang digunakan untuk pertanyaan yang bersifat meminta
+informasi seperti informasi produk, informasi status registrasi, informasi
+pembayaran, informasi promo, informasi billing etc.
+○​ Request
+Merupakan kategori yang digunakan untuk pertanyaan yang bersifat meminta
+pelayanan seperti request terminasi, relokasi, kedatangan teknisi,
+penggantian paket, invoice, add on internet / tv cable, reset password,
+instalasi baru, checking coverage area etc.
+○​ Problem
+Merupakan kategori yang digunakan untuk pertanyaan yang bersifat
+mengadukan masalah yang dialami seperti koneksi lambat, koneksi putus,
+permasalahan modem maupun router, permasalahan pembayaran,
+permasalahan kuota tidak reset etc.
+●​ Split data menjadi data training (80% dari total data) dan data testing (20% dari total
+data). Siapkan matriks evaluasi yang berupa akurasi, presisi dan recall.
+●​ Siapkan project yang sudah selesai kedalam folder di repository untuk kemudian
+dikumpulkan. Berikut merupakan kelengkapan yang ada di dalam folder di repository
+yang dikirimkan :
+○​ File requirement.txt yang berisi daftar python package yang digunakan untuk
+instalasi di venv.
+○​ File dataset training dan testing yang sudah berisi label yang digunakan untuk
+ML Model.
+○​ File code python yang digunakan untuk ML Model.
+○​ File readme.txt yang berisi deskripsi dari metode yang digunakan dan flow
+code yang dibuat serta langkah untuk instalasi dan testing ML Model yang
+dibuat.
+○​ FIle lainnya yang digunakan dalam pembuatan project.

@@ -1,0 +1,3 @@
+Information: 0
+Request: 1
+Problem: 2
