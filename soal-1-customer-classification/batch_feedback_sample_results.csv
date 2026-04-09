@@ -1,0 +1,301 @@
+message,cleaned_text,prediction,correct_label,confidence,is_correct
+The payment was deducted from my bank account but the transaction shows failed.,The payment was deducted from my bank account but the transa...,Request,Problem,0.9999115799222322,False
+I found a bug in the latest update affecting report generation.,I found a bug in the latest update affecting report generati...,Information,Problem,0.5760759925227276,False
+I am unable to login to my account despite using the correct credentials.,I am unable to login to my account despite using the correct...,Problem,Problem,0.973549863476047,True
+I am having trouble accessing some features of the website.,I am having trouble accessing some features of the website.,Information,Problem,0.9228411183792458,False
+I keep getting an error message when trying to upload files to the portal.,I keep getting an error message when trying to upload files ...,Problem,Problem,0.9524832245000711,True
+I am receiving too many promotional emails and would like to unsubscribe.,I am receiving too many promotional emails and would like to...,Request,Request,0.997200767278656,True
+The mobile app is crashing frequently on my device.,The mobile app is crashing frequently on my device.,Problem,Problem,0.847919650730389,True
+"My subscription was supposed to be canceled, but I was charged again.","My subscription was supposed to be canceled, but I was charg...",Request,Problem,0.9834348232297779,False
+The website is loading very slowly for me.,The website is loading very slowly for me.,Problem,Problem,0.8913809836520425,True
+The app is not syncing data across my devices.,The app is not syncing data across my devices.,Problem,Problem,0.8737108675733947,True
+I have noticed some unauthorized transactions on my account.,I have noticed some unauthorized transactions on my account.,Problem,Problem,0.999130808427398,True
+The website layout is distorted on my browser.,The website layout is distorted on my browser.,Request,Problem,0.42017996160680254,False
+I am having trouble setting up my account.,I am having trouble setting up my account.,Request,Problem,0.9572519805325586,False
+I received a damaged product in my order.,I received a damaged product in my order.,Problem,Problem,0.9965652680642786,True
+I need help with resetting my password.,I need help with resetting my password.,Request,Request,0.9999585263115719,True
+I am unable to update my profile information.,I am unable to update my profile information.,Problem,Problem,0.560062706185875,True
+I am unable to download the software on my computer.,I am unable to download the software on my computer.,Information,Problem,0.3545859689476713,False
+I am not receiving any notifications from the app.,I am not receiving any notifications from the app.,Problem,Problem,0.8875839007276862,True
+I am unable to access the premium features despite having a subscription.,I am unable to access the premium features despite having a ...,Information,Problem,0.9154133472898734,False
+I am unable to complete the checkout process on the website.,I am unable to complete the checkout process on the website.,Request,Problem,0.5032889692961888,False
+I am unable to delete my account.,I am unable to delete my account.,Request,Request,0.9999722413812329,True
+I have a question about the pricing for your services.,I have a question about the pricing for your services.,Information,Information,0.9989866024598469,True
+I am unable to track my order in real-time.,I am unable to track my order in real-time.,Problem,Problem,0.9988310289173817,True
+I am receiving an 'Access Denied' error when trying to visit some pages.,I am receiving an 'Access Denied' error when trying to visit...,Problem,Problem,0.6097315696199112,True
+I am experiencing difficulty in navigating through the mobile app.,I am experiencing difficulty in navigating through the mobil...,Problem,Problem,0.6291309339749931,True
+I am unable to change my email address associated with the account.,I am unable to change my email address associated with the a...,Request,Problem,0.9999999862229033,False
+The product I received is different from what I ordered.,The product I received is different from what I ordered.,Problem,Problem,0.9965652680642786,True
+I am unable to generate reports from the dashboard.,I am unable to generate reports from the dashboard.,Problem,Problem,0.9988641622011357,True
+The mobile app is not responding to touch inputs.,The mobile app is not responding to touch inputs.,Problem,Problem,0.6291309339749931,True
+I am unable to connect my social media accounts to the portal.,I am unable to connect my social media accounts to the porta...,Information,Problem,0.5330181624907361,False
+I am having trouble understanding the billing statement for this month.,I am having trouble understanding the billing statement for ...,Problem,Information,0.9984919216118624,False
+The website is not displaying any images or graphics for me.,The website is not displaying any images or graphics for me.,Request,Problem,0.42017996160680254,False
+I am unable to add items to my shopping cart.,I am unable to add items to my shopping cart.,Information,Problem,0.8754552770503253,False
+I am unable to verify my email address.,I am unable to verify my email address.,Request,Problem,0.9998645776152171,False
+I am unable to see my purchase history on the account page.,I am unable to see my purchase history on the account page.,Request,Problem,0.9572519805325586,False
+I am having trouble with the two-factor authentication process.,I am having trouble with the two-factor authentication proce...,Information,Problem,0.49233432380913106,False
+The app is consuming too much battery on my phone.,The app is consuming too much battery on my phone.,Request,Problem,0.6163343921078256,False
+I am unable to contact customer support through the chat feature.,I am unable to contact customer support through the chat fea...,Information,Problem,0.8979770884866156,False
+I have a suggestion for improving the user interface of the mobile app.,I have a suggestion for improving the user interface of the ...,Problem,Information,0.6291309339749931,False
+I am unable to find the search bar on the website.,I am unable to find the search bar on the website.,Request,Information,0.42017996160680254,False
+I am unable to apply a discount code during checkout.,I am unable to apply a discount code during checkout.,Information,Problem,0.9991018264588433,False
+The mobile app is not compatible with my device's operating system.,The mobile app is not compatible with my device's operating ...,Information,Problem,0.9372549333996789,False
+I am having trouble with the voice recognition feature on the app.,I am having trouble with the voice recognition feature on th...,Problem,Problem,0.6291309339749931,True
+I am unable to print invoices from the portal.,I am unable to print invoices from the portal.,Information,Problem,0.3545859689476713,False
+I am having trouble with the language settings on the app.,I am having trouble with the language settings on the app.,Problem,Problem,0.9715442766537776,True
+I am unable to link my bank account to the mobile app.,I am unable to link my bank account to the mobile app.,Problem,Problem,0.6881017470724011,True
+I am unable to schedule a call with a representative through the portal.,I am unable to schedule a call with a representative through...,Request,Request,0.8385208049457746,True
+I am unable to change the theme of the mobile app.,I am unable to change the theme of the mobile app.,Request,Problem,0.4569681907188919,False
+I am unable to access the help center on the website.,I am unable to access the help center on the website.,Request,Problem,0.9088855928610844,False
+I am unable to export my data from the portal.,I am unable to export my data from the portal.,Problem,Problem,0.7205733254578713,True
+I am having trouble with the map feature on the mobile app.,I am having trouble with the map feature on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am unable to upgrade my subscription plan.,I am unable to upgrade my subscription plan.,Information,Request,0.9908820765134514,False
+I am unable to find the user manual for the product online.,I am unable to find the user manual for the product online.,Information,Information,0.3545859689476713,True
+I am having trouble with the auto-fill feature on the checkout page.,I am having trouble with the auto-fill feature on the checko...,Information,Problem,0.3545859689476713,False
+I am unable to cancel my order that was placed recently.,I am unable to cancel my order that was placed recently.,Request,Request,0.9957752404866184,True
+I am unable to share content from the app to social media platforms.,I am unable to share content from the app to social media pl...,Problem,Problem,0.6291309339749931,True
+I am unable to view the terms and conditions on the website.,I am unable to view the terms and conditions on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the search results on the web portal.,I am having trouble with the search results on the web porta...,Information,Problem,0.3545859689476713,False
+I am unable to receive SMS alerts for account activity.,I am unable to receive SMS alerts for account activity.,Request,Problem,0.9572519805325586,False
+I am having trouble with the video player on the website.,I am having trouble with the video player on the website.,Request,Problem,0.42017996160680254,False
+I am unable to set a profile picture for my account.,I am unable to set a profile picture for my account.,Problem,Problem,0.9999825152891691,True
+I am unable to see the available balance in my account.,I am unable to see the available balance in my account.,Request,Information,0.7630830023797389,False
+I am having trouble with the font size on the mobile app.,I am having trouble with the font size on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am unable to view the FAQ section on the website.,I am unable to view the FAQ section on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the location services on the app.,I am having trouble with the location services on the app.,Problem,Problem,0.6291309339749931,True
+I am unable to receive a refund for my canceled subscription.,I am unable to receive a refund for my canceled subscription...,Information,Problem,0.9095408268511994,False
+I am having trouble with the keyboard shortcuts on the portal.,I am having trouble with the keyboard shortcuts on the porta...,Information,Problem,0.3545859689476713,False
+I am unable to redeem my loyalty points for discounts.,I am unable to redeem my loyalty points for discounts.,Information,Problem,0.3545859689476713,False
+I am having trouble with the zoom feature on the mobile app.,I am having trouble with the zoom feature on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am unable to see the status of my support ticket.,I am unable to see the status of my support ticket.,Information,Information,0.8979770884866156,True
+I am having trouble with the filters on the search page.,I am having trouble with the filters on the search page.,Information,Problem,0.3545859689476713,False
+I am unable to receive an OTP for verifying my phone number.,I am unable to receive an OTP for verifying my phone number.,Request,Problem,0.647090274278154,False
+I am having trouble with the dark mode setting on the website.,I am having trouble with the dark mode setting on the websit...,Request,Problem,0.42017996160680254,False
+I am unable to see the delivery date for my order.,I am unable to see the delivery date for my order.,Information,Information,0.3545859689476713,True
+I am having trouble with the drag and drop feature on the portal.,I am having trouble with the drag and drop feature on the po...,Information,Problem,0.3545859689476713,False
+I am unable to access the community forum on the website.,I am unable to access the community forum on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the captcha on the registration page.,I am having trouble with the captcha on the registration pag...,Information,Problem,0.3545859689476713,False
+I am unable to receive a verification code on my email.,I am unable to receive a verification code on my email.,Request,Problem,0.9246835272307624,False
+I am having trouble with the file compression feature on the portal.,I am having trouble with the file compression feature on the...,Information,Problem,0.3545859689476713,False
+I am unable to see the product specifications on the website.,I am unable to see the product specifications on the website...,Request,Information,0.42017996160680254,False
+I am having trouble with the sorting options on the dashboard.,I am having trouble with the sorting options on the dashboar...,Problem,Problem,0.9988641622011357,True
+I am unable to access the live demo on the website.,I am unable to access the live demo on the website.,Request,Problem,0.9463668258306773,False
+I am having trouble with the browser compatibility on the portal.,I am having trouble with the browser compatibility on the po...,Information,Problem,0.3545859689476713,False
+I am unable to receive any updates on my order status.,I am unable to receive any updates on my order status.,Information,Information,0.3545859689476713,True
+I am having trouble with the screen resolution on the mobile app.,I am having trouble with the screen resolution on the mobile...,Problem,Problem,0.6291309339749931,True
+I am unable to see the contact information of the seller.,I am unable to see the contact information of the seller.,Information,Information,0.3545859689476713,True
+I am having trouble with the scroll bar on the web portal.,I am having trouble with the scroll bar on the web portal.,Information,Problem,0.3545859689476713,False
+I am unable to receive a confirmation email for my registration.,I am unable to receive a confirmation email for my registrat...,Request,Problem,0.9246835272307624,False
+I am having trouble with the data visualization on the dashboard.,I am having trouble with the data visualization on the dashb...,Problem,Problem,0.9986318658751422,True
+I am unable to access the tutorial videos on the website.,I am unable to access the tutorial videos on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the plugin integration on the portal.,I am having trouble with the plugin integration on the porta...,Information,Problem,0.3545859689476713,False
+I am unable to receive any emails from your company.,I am unable to receive any emails from your company.,Information,Problem,0.3545859689476713,False
+I am having trouble with the page layout on the mobile app.,I am having trouble with the page layout on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am unable to see the reviews for the product on the website.,I am unable to see the reviews for the product on the websit...,Request,Information,0.42017996160680254,False
+I am having trouble with the loading time of the dashboard.,I am having trouble with the loading time of the dashboard.,Problem,Problem,0.9999955876140396,True
+I am unable to receive a password reset link on my email.,I am unable to receive a password reset link on my email.,Request,Problem,0.999995665521802,False
+I am having trouble with the character limit on the feedback form.,I am having trouble with the character limit on the feedback...,Information,Problem,0.6635353785278574,False
+I am unable to access the blog section on the website.,I am unable to access the blog section on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the image quality on the mobile app.,I am having trouble with the image quality on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am unable to see the shipping costs for my order.,I am unable to see the shipping costs for my order.,Information,Information,0.3545859689476713,True
+I am unable to see the terms of service on the mobile app.,I am unable to see the terms of service on the mobile app.,Problem,Information,0.5491781926000654,False
+I am having trouble with the font style on the web portal.,I am having trouble with the font style on the web portal.,Information,Problem,0.3545859689476713,False
+I am unable to receive a notification for a new message.,I am unable to receive a notification for a new message.,Information,Problem,0.9930165523300086,False
+I am having trouble with the page navigation on the website.,I am having trouble with the page navigation on the website.,Request,Problem,0.42017996160680254,False
+I am unable to see the history of my chat conversations.,I am unable to see the history of my chat conversations.,Information,Information,0.3545859689476713,True
+I am having trouble with the data export feature on the mobile app.,I am having trouble with the data export feature on the mobi...,Problem,Problem,0.8737108675733947,True
+I am unable to receive a verification link on my phone.,I am unable to receive a verification link on my phone.,Request,Problem,0.998693331193617,False
+I am having trouble with the account recovery process.,I am having trouble with the account recovery process.,Request,Problem,0.8209249293925149,False
+I am unable to see the estimated time of arrival for my delivery.,I am unable to see the estimated time of arrival for my deli...,Problem,Information,0.9988310289173817,False
+I am having trouble with the profile customization on the portal.,I am having trouble with the profile customization on the po...,Problem,Problem,0.9989007198790035,True
+I am unable to access the help documentation on the website.,I am unable to access the help documentation on the website.,Request,Problem,0.9088855928610844,False
+I am having trouble with the search functionality on the mobile app.,I am having trouble with the search functionality on the mob...,Problem,Problem,0.6291309339749931,True
+I am unable to receive any SMS notifications from your company.,I am unable to receive any SMS notifications from your compa...,Information,Problem,0.3545859689476713,False
+I am having trouble with the UI design of the web portal.,I am having trouble with the UI design of the web portal.,Information,Problem,0.3545859689476713,False
+I am unable to see the product ratings on the website.,I am unable to see the product ratings on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the performance of the dashboard.,I am having trouble with the performance of the dashboard.,Problem,Problem,0.9988641622011357,True
+I am unable to receive a confirmation code for my purchase.,I am unable to receive a confirmation code for my purchase.,Information,Problem,0.3545859689476713,False
+I am having trouble with the feedback submission on the portal.,I am having trouble with the feedback submission on the port...,Information,Problem,0.3545859689476713,False
+I am unable to access the user forum on the website.,I am unable to access the user forum on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the image loading on the mobile app.,I am having trouble with the image loading on the mobile app...,Problem,Problem,0.971723867680326,True
+I am unable to see the price breakdown for my order.,I am unable to see the price breakdown for my order.,Information,Information,0.3545859689476713,True
+I am having trouble with the sorting feature on the web portal.,I am having trouble with the sorting feature on the web port...,Information,Problem,0.3545859689476713,False
+I am unable to receive any alerts for account login.,I am unable to receive any alerts for account login.,Problem,Problem,0.973549863476047,True
+I am having trouble with the video quality on the website.,I am having trouble with the video quality on the website.,Request,Problem,0.42017996160680254,False
+I am unable to set a notification preference for my account.,I am unable to set a notification preference for my account.,Request,Request,0.9572519805325586,True
+I am unable to see the remaining balance in my wallet.,I am unable to see the remaining balance in my wallet.,Information,Information,0.48285376924119283,True
+I am having trouble with the touch sensitivity on the mobile app.,I am having trouble with the touch sensitivity on the mobile...,Problem,Problem,0.6291309339749931,True
+I am unable to view the privacy policy on the website.,I am unable to view the privacy policy on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the location tracking on the app.,I am having trouble with the location tracking on the app.,Problem,Problem,0.6291309339749931,True
+I am unable to receive a response from customer support.,I am unable to receive a response from customer support.,Information,Problem,0.8979770884866156,False
+I am having trouble with the hotkeys on the portal.,I am having trouble with the hotkeys on the portal.,Information,Problem,0.3545859689476713,False
+I am unable to redeem a gift card for my purchase.,I am unable to redeem a gift card for my purchase.,Information,Problem,0.3545859689476713,False
+I am having trouble with the voice command feature on the mobile app.,I am having trouble with the voice command feature on the mo...,Problem,Problem,0.6291309339749931,True
+I am unable to see the status of my refund request.,I am unable to see the status of my refund request.,Information,Information,0.49863232157658866,True
+I am having trouble with the search filters on the web portal.,I am having trouble with the search filters on the web porta...,Information,Problem,0.3545859689476713,False
+I am unable to receive an email for account verification.,I am unable to receive an email for account verification.,Request,Problem,0.9806754163317049,False
+I am having trouble with the night mode setting on the website.,I am having trouble with the night mode setting on the websi...,Problem,Problem,0.6736886295774936,True
+I am unable to see the track number for my shipment.,I am unable to see the track number for my shipment.,Information,Information,0.8751400284752091,True
+I am having trouble with the file upload feature on the portal.,I am having trouble with the file upload feature on the port...,Problem,Problem,0.8642918277608469,True
+I am unable to access the knowledge base on the website.,I am unable to access the knowledge base on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the captcha on the login page.,I am having trouble with the captcha on the login page.,Problem,Problem,0.993662229168665,True
+I am unable to receive a notification for a system update.,I am unable to receive a notification for a system update.,Request,Problem,0.9931432935294248,False
+I am having trouble with the file download feature on the portal.,I am having trouble with the file download feature on the po...,Information,Problem,0.3545859689476713,False
+I am unable to see the product description on the website.,I am unable to see the product description on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the column filtering on the dashboard.,I am having trouble with the column filtering on the dashboa...,Problem,Problem,0.9988641622011357,True
+I am unable to access the live chat on the website.,I am unable to access the live chat on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the cross-browser support on the portal.,I am having trouble with the cross-browser support on the po...,Information,Problem,0.8979770884866156,False
+I am unable to receive any promotional offers via email.,I am unable to receive any promotional offers via email.,Request,Problem,0.9246835272307624,False
+I am having trouble with the screen orientation on the mobile app.,I am having trouble with the screen orientation on the mobil...,Problem,Problem,0.6291309339749931,True
+I am unable to see the contact details of the support team.,I am unable to see the contact details of the support team.,Information,Information,0.995874400088021,True
+I am having trouble with the side bar on the web portal.,I am having trouble with the side bar on the web portal.,Information,Problem,0.3545859689476713,False
+I am unable to receive a confirmation message for my registration.,I am unable to receive a confirmation message for my registr...,Information,Problem,0.3545859689476713,False
+I am having trouble with the data analysis on the dashboard.,I am having trouble with the data analysis on the dashboard.,Problem,Problem,0.9986318658751422,True
+I am unable to access the training materials on the website.,I am unable to access the training materials on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the extension integration on the portal.,I am having trouble with the extension integration on the po...,Information,Problem,0.3545859689476713,False
+I am unable to receive any newsletters from your company.,I am unable to receive any newsletters from your company.,Information,Problem,0.3545859689476713,False
+I am having trouble with the header design on the mobile app.,I am having trouble with the header design on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am unable to see the user reviews for the product on the website.,I am unable to see the user reviews for the product on the w...,Request,Information,0.42017996160680254,False
+I am having trouble with the response time of the dashboard.,I am having trouble with the response time of the dashboard.,Problem,Problem,0.9999503228590287,True
+I am unable to receive a link for password recovery on my email.,I am unable to receive a link for password recovery on my em...,Request,Problem,0.99836161287982,False
+I am having trouble with the word count on the comment section.,I am having trouble with the word count on the comment secti...,Information,Problem,0.3545859689476713,False
+I am unable to access the news section on the website.,I am unable to access the news section on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the resolution of images on the mobile app.,I am having trouble with the resolution of images on the mob...,Problem,Problem,0.6291309339749931,True
+I am unable to see the taxes and fees for my order.,I am unable to see the taxes and fees for my order.,Information,Information,0.3545859689476713,True
+I am having trouble with the terms and conditions page on the mobile app.,I am having trouble with the terms and conditions page on th...,Problem,Information,0.6291309339749931,False
+I am unable to change the font color on the web portal.,I am unable to change the font color on the web portal.,Request,Request,0.9942386683278,True
+I am having trouble with the alert system for new messages.,I am having trouble with the alert system for new messages.,Problem,Problem,0.7645773889984121,True
+I am unable to navigate between pages on the website.,I am unable to navigate between pages on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the conversation history feature.,I am having trouble with the conversation history feature.,Information,Problem,0.3545859689476713,False
+I am unable to export my profile data from the mobile app.,I am unable to export my profile data from the mobile app.,Problem,Problem,0.9924799315782639,True
+I am having trouble with the verification link on my phone.,I am having trouble with the verification link on my phone.,Request,Problem,0.998693331193617,False
+I am unable to recover my account after several attempts.,I am unable to recover my account after several attempts.,Request,Problem,0.9572519805325586,False
+I am having trouble with the delivery estimation feature.,I am having trouble with the delivery estimation feature.,Information,Problem,0.3545859689476713,False
+I am unable to customize my profile on the portal.,I am unable to customize my profile on the portal.,Problem,Request,0.9989007198790035,False
+I am having trouble with the help section on the website.,I am having trouble with the help section on the website.,Request,Problem,0.9088855928610844,False
+I am unable to use the search bar on the mobile app.,I am unable to use the search bar on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am having trouble with the SMS alert system.,I am having trouble with the SMS alert system.,Problem,Problem,0.993662229168665,True
+I am unable to navigate the web portal due to its design.,I am unable to navigate the web portal due to its design.,Information,Problem,0.3545859689476713,False
+I am having trouble with the product rating system on the website.,I am having trouble with the product rating system on the we...,Request,Problem,0.42017996160680254,False
+I am unable to improve the performance of my dashboard.,I am unable to improve the performance of my dashboard.,Problem,Problem,0.9988641622011357,True
+I am having trouble with the purchase confirmation process.,I am having trouble with the purchase confirmation process.,Information,Problem,0.49233432380913106,False
+I am unable to submit feedback through the portal.,I am unable to submit feedback through the portal.,Information,Problem,0.3545859689476713,False
+I am having trouble with the user forum on the website.,I am having trouble with the user forum on the website.,Request,Problem,0.42017996160680254,False
+I am unable to load images on the mobile app.,I am unable to load images on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am having trouble with the price breakdown on my order.,I am having trouble with the price breakdown on my order.,Information,Information,0.3545859689476713,True
+I am unable to sort data on the web portal.,I am unable to sort data on the web portal.,Problem,Problem,0.7205733254578713,True
+I am having trouble with the account login alerts.,I am having trouble with the account login alerts.,Problem,Problem,0.973549863476047,True
+I am unable to play videos on the website.,I am unable to play videos on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the notification settings for my account.,I am having trouble with the notification settings for my ac...,Problem,Problem,0.9830207965373334,True
+I am unable to view my wallet balance.,I am unable to view my wallet balance.,Request,Information,0.5303913809274736,False
+I am having trouble with the mobile app's touch interface.,I am having trouble with the mobile app's touch interface.,Problem,Problem,0.6291309339749931,True
+I am unable to read the privacy policy on the website.,I am unable to read the privacy policy on the website.,Request,Information,0.42017996160680254,False
+I am having trouble with the location services on the app.,I am having trouble with the location services on the app.,Problem,Problem,0.6291309339749931,True
+I am unable to get a response from your support team.,I am unable to get a response from your support team.,Information,Problem,0.995874400088021,False
+I am having trouble with the keyboard shortcuts on the portal.,I am having trouble with the keyboard shortcuts on the porta...,Information,Problem,0.3545859689476713,False
+I am unable to use a gift card for my transaction.,I am unable to use a gift card for my transaction.,Request,Problem,0.9991331665280216,False
+I am having trouble with the voice assistant on the mobile app.,I am having trouble with the voice assistant on the mobile a...,Problem,Problem,0.6291309339749931,True
+I am unable to check the status of my refund.,I am unable to check the status of my refund.,Information,Information,0.8737045381211476,True
+I am having trouble with the filtering options on the web portal.,I am having trouble with the filtering options on the web po...,Information,Problem,0.3545859689476713,False
+I am unable to receive the verification email for my account.,I am unable to receive the verification email for my account...,Request,Problem,0.9806754163317049,False
+I am having trouble with the night mode feature on the website.,I am having trouble with the night mode feature on the websi...,Problem,Problem,0.6736886295774936,True
+I am unable to see the tracking information for my order.,I am unable to see the tracking information for my order.,Information,Information,0.3545859689476713,True
+I am having trouble with the file upload tool on the portal.,I am having trouble with the file upload tool on the portal.,Problem,Problem,0.8642918277608469,True
+I am unable to access the help documentation on the website.,I am unable to access the help documentation on the website.,Request,Information,0.9088855928610844,False
+I am having trouble with the captcha verification on the login page.,I am having trouble with the captcha verification on the log...,Problem,Problem,0.993662229168665,True
+I am unable to receive notifications for system updates.,I am unable to receive notifications for system updates.,Information,Problem,0.3545859689476713,False
+I am having trouble with the file download tool on the portal.,I am having trouble with the file download tool on the porta...,Information,Problem,0.3545859689476713,False
+I am unable to see the detailed product description on the website.,I am unable to see the detailed product description on the w...,Request,Information,0.42017996160680254,False
+I am having trouble with the column filtering on the reporting dashboard.,I am having trouble with the column filtering on the reporti...,Problem,Problem,0.9988641622011357,True
+I am unable to access the live support chat on the website.,I am unable to access the live support chat on the website.,Information,Problem,0.6944100722362975,False
+I am having trouble with the cross-browser compatibility on the portal.,I am having trouble with the cross-browser compatibility on ...,Information,Problem,0.3545859689476713,False
+I am unable to receive any promotional deals via email.,I am unable to receive any promotional deals via email.,Request,Problem,0.9246835272307624,False
+I am having trouble with the screen orientation on the mobile app.,I am having trouble with the screen orientation on the mobil...,Problem,Problem,0.6291309339749931,True
+I am unable to find the contact details of the support team.,I am unable to find the contact details of the support team.,Information,Information,0.995874400088021,True
+I am having trouble with the navigation menu on the web portal.,I am having trouble with the navigation menu on the web port...,Information,Problem,0.3545859689476713,False
+I am unable to receive a confirmation message for my account registration.,I am unable to receive a confirmation message for my account...,Request,Problem,0.9572519805325586,False
+I am having trouble with the data analysis tools on the dashboard.,I am having trouble with the data analysis tools on the dash...,Problem,Problem,0.9986318658751422,True
+I am unable to access the training videos on the website.,I am unable to access the training videos on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the third-party extension integration.,I am having trouble with the third-party extension integrati...,Information,Problem,0.3545859689476713,False
+I am unable to receive any newsletters from your company.,I am unable to receive any newsletters from your company.,Information,Problem,0.3545859689476713,False
+I am having trouble with the header layout on the mobile app.,I am having trouble with the header layout on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am unable to see the customer reviews for the product.,I am unable to see the customer reviews for the product.,Information,Information,0.3545859689476713,True
+I am having trouble with the response time of the reporting dashboard.,I am having trouble with the response time of the reporting ...,Problem,Problem,0.9999503228590287,True
+I am unable to receive a link for password recovery.,I am unable to receive a link for password recovery.,Request,Request,0.9984398792430672,True
+I am having trouble with the word count limit on comments.,I am having trouble with the word count limit on comments.,Information,Problem,0.6635353785278574,False
+I am unable to access the news archive on the website.,I am unable to access the news archive on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the resolution of photos on the mobile app.,I am having trouble with the resolution of photos on the mob...,Problem,Problem,0.6291309339749931,True
+I am unable to see the taxes and service fees for my order.,I am unable to see the taxes and service fees for my order.,Request,Information,0.40324946638185655,False
+I am having trouble with the terms and conditions on the mobile app.,I am having trouble with the terms and conditions on the mob...,Problem,Information,0.6291309339749931,False
+I am unable to change the font color settings on the web portal.,I am unable to change the font color settings on the web por...,Problem,Request,0.6638579429184974,False
+I am having trouble with the alert system for incoming messages.,I am having trouble with the alert system for incoming messa...,Problem,Problem,0.993662229168665,True
+I am unable to navigate between different pages on the website.,I am unable to navigate between different pages on the websi...,Request,Problem,0.42017996160680254,False
+I am having trouble with the chat history search feature.,I am having trouble with the chat history search feature.,Information,Problem,0.3545859689476713,False
+I am unable to export my account data from the mobile app.,I am unable to export my account data from the mobile app.,Request,Problem,0.8047059646020663,False
+I am having trouble with the verification link sent to my phone.,I am having trouble with the verification link sent to my ph...,Request,Problem,0.998693331193617,False
+I am unable to recover my account after multiple attempts.,I am unable to recover my account after multiple attempts.,Request,Problem,0.9572519805325586,False
+I am having trouble with the delivery date estimation.,I am having trouble with the delivery date estimation.,Information,Information,0.3545859689476713,True
+I am unable to customize my profile details on the portal.,I am unable to customize my profile details on the portal.,Problem,Request,0.9989007198790035,False
+I am having trouble with the help and support section on the website.,I am having trouble with the help and support section on the...,Information,Problem,0.5557887283412353,False
+I am unable to use the search function on the mobile app.,I am unable to use the search function on the mobile app.,Problem,Problem,0.6291309339749931,True
+I am having trouble with the SMS notification system.,I am having trouble with the SMS notification system.,Information,Problem,0.3545859689476713,False
+I am unable to navigate the web portal effectively.,I am unable to navigate the web portal effectively.,Information,Problem,0.3545859689476713,False
+I am having trouble with the product rating feature.,I am having trouble with the product rating feature.,Information,Problem,0.3545859689476713,False
+I am unable to improve the performance of my personal dashboard.,I am unable to improve the performance of my personal dashbo...,Problem,Problem,0.9988641622011357,True
+I am having trouble with the purchase confirmation email.,I am having trouble with the purchase confirmation email.,Request,Problem,0.9246835272307624,False
+I am unable to submit my feedback through the portal.,I am unable to submit my feedback through the portal.,Information,Problem,0.3545859689476713,False
+I am having trouble with the community forum on the website.,I am having trouble with the community forum on the website.,Request,Problem,0.42017996160680254,False
+I am unable to load high-resolution images on the mobile app.,I am unable to load high-resolution images on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am having trouble with the price breakdown on the checkout page.,I am having trouble with the price breakdown on the checkout...,Information,Information,0.3545859689476713,True
+I am unable to sort the data tables on the web portal.,I am unable to sort the data tables on the web portal.,Problem,Problem,0.7205733254578713,True
+I am having trouble with the account login security alerts.,I am having trouble with the account login security alerts.,Problem,Problem,0.973549863476047,True
+I am unable to play the tutorial videos on the website.,I am unable to play the tutorial videos on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the notification preferences for my account.,I am having trouble with the notification preferences for my...,Request,Problem,0.9572519805325586,False
+I am unable to see the current balance in my wallet.,I am unable to see the current balance in my wallet.,Request,Information,0.5303913809274736,False
+I am having trouble with the touch interface on the mobile app.,I am having trouble with the touch interface on the mobile a...,Problem,Problem,0.6291309339749931,True
+I am unable to read the privacy policy document on the website.,I am unable to read the privacy policy document on the websi...,Request,Information,0.42017996160680254,False
+I am having trouble with the GPS location services on the app.,I am having trouble with the GPS location services on the ap...,Problem,Problem,0.6291309339749931,True
+I am unable to get a timely response from your support team.,I am unable to get a timely response from your support team.,Information,Problem,0.995874400088021,False
+I am having trouble with the keyboard shortcut configuration.,I am having trouble with the keyboard shortcut configuration...,Information,Problem,0.3545859689476713,False
+I am unable to use my gift card for this transaction.,I am unable to use my gift card for this transaction.,Request,Problem,0.9991331665280216,False
+I am having trouble with the voice recognition on the mobile app.,I am having trouble with the voice recognition on the mobile...,Problem,Problem,0.6291309339749931,True
+I am unable to check the status of my recent refund.,I am unable to check the status of my recent refund.,Information,Information,0.8737045381211476,True
+I am having trouble with the filtering criteria on the web portal.,I am having trouble with the filtering criteria on the web p...,Information,Problem,0.3545859689476713,False
+I am unable to receive the verification email for my new account.,I am unable to receive the verification email for my new acc...,Request,Problem,0.9415328448452427,False
+I am having trouble with the dark mode toggle on the website.,I am having trouble with the dark mode toggle on the website...,Request,Problem,0.42017996160680254,False
+I am unable to see the tracking number for my package.,I am unable to see the tracking number for my package.,Information,Information,0.8246764122482021,True
+I am having trouble with the file attachment feature on the portal.,I am having trouble with the file attachment feature on the ...,Information,Problem,0.3545859689476713,False
+I am unable to access the online knowledge base.,I am unable to access the online knowledge base.,Information,Information,0.3545859689476713,True
+I am having trouble with the captcha on the sign-up page.,I am having trouble with the captcha on the sign-up page.,Information,Problem,0.3545859689476713,False
+I am unable to receive notifications for app updates.,I am unable to receive notifications for app updates.,Problem,Problem,0.6291309339749931,True
+I am having trouble with the file export feature on the portal.,I am having trouble with the file export feature on the port...,Information,Problem,0.3545859689476713,False
+I am unable to see the full product specifications.,I am unable to see the full product specifications.,Information,Information,0.3545859689476713,True
+I am having trouble with the row filtering on the dashboard.,I am having trouble with the row filtering on the dashboard.,Problem,Problem,0.9988641622011357,True
+I am unable to access the live chat representative.,I am unable to access the live chat representative.,Information,Problem,0.3545859689476713,False
+I am having trouble with the browser support for the portal.,I am having trouble with the browser support for the portal.,Information,Problem,0.8979770884866156,False
+I am unable to receive any special offers via email.,I am unable to receive any special offers via email.,Request,Problem,0.9246835272307624,False
+I am having trouble with the screen rotation on the mobile app.,I am having trouble with the screen rotation on the mobile a...,Problem,Problem,0.6291309339749931,True
+I am unable to find the email address for support.,I am unable to find the email address for support.,Request,Information,0.9902373346050388,False
+I am having trouble with the navigation bar on the web portal.,I am having trouble with the navigation bar on the web porta...,Information,Problem,0.3545859689476713,False
+I am unable to receive a confirmation for my subscription.,I am unable to receive a confirmation for my subscription.,Request,Problem,0.9834348232297779,False
+I am having trouble with the data visualization tools.,I am having trouble with the data visualization tools.,Problem,Problem,0.7205733254578713,True
+I am unable to access the webinar section on the website.,I am unable to access the webinar section on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the API integration on the portal.,I am having trouble with the API integration on the portal.,Problem,Problem,0.998786298462327,True
+I am unable to receive any marketing emails.,I am unable to receive any marketing emails.,Information,Problem,0.3545859689476713,False
+I am having trouble with the footer design on the mobile app.,I am having trouble with the footer design on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am unable to see the total number of reviews for the product.,I am unable to see the total number of reviews for the produ...,Information,Information,0.8751400284752091,True
+I am having trouble with the loading speed of the dashboard.,I am having trouble with the loading speed of the dashboard.,Problem,Problem,0.9986155194787781,True
+I am unable to receive a password reset code.,I am unable to receive a password reset code.,Request,Request,0.9999949302805051,True
+I am having trouble with the character limit on the support form.,I am having trouble with the character limit on the support ...,Information,Problem,0.9495199465736752,False
+I am unable to access the press release section on the website.,I am unable to access the press release section on the websi...,Request,Problem,0.42017996160680254,False
+I am having trouble with the image clarity on the mobile app.,I am having trouble with the image clarity on the mobile app...,Problem,Problem,0.6291309339749931,True
+I am unable to see the shipping and handling fees.,I am unable to see the shipping and handling fees.,Information,Information,0.3545859689476713,True
+I am having trouble with the privacy settings on the mobile app.,I am having trouble with the privacy settings on the mobile ...,Problem,Problem,0.9715442766537776,True
+I am unable to change the font size on the web portal.,I am unable to change the font size on the web portal.,Request,Request,0.9942386683278,True
+I am having trouble with the notification system for new alerts.,I am having trouble with the notification system for new ale...,Information,Problem,0.9930165523300086,False
+I am unable to switch between tabs on the website.,I am unable to switch between tabs on the website.,Request,Problem,0.42017996160680254,False
+I am having trouble with the message history feature.,I am having trouble with the message history feature.,Information,Problem,0.3545859689476713,False
+I am unable to download my profile information.,I am unable to download my profile information.,Problem,Request,0.9989007198790035,False
+I am having trouble with the SMS verification code.,I am having trouble with the SMS verification code.,Information,Problem,0.3545859689476713,False
+I am unable to recover my deleted account.,I am unable to recover my deleted account.,Request,Request,0.9572519805325586,True

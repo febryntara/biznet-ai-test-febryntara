@@ -1,0 +1,21 @@
+message,cleaned_text,prediction,correct_label,confidence,is_correct
+Can you install new connection at my home?,Can you install new connection at my home?,Request,Request,0.9595597523128575,True
+How do I check my data usage?,How do I check my data usage?,Information,Information,0.9275629586239971,True
+Modem keeps disconnecting every hour,Modem keeps disconnecting every hour,Problem,Problem,0.9461467791846521,True
+I want to upgrade my internet package,I want to upgrade my internet package,Request,Request,0.5479439615820901,True
+What is the procedure to cancel subscription?,What is the procedure to cancel subscription?,Information,Information,0.5930107587340927,True
+My bill is higher than expected,My bill is higher than expected,Problem,Problem,0.8006560768171509,True
+Please send technician to fix connection,Please send technician to fix connection,Request,Request,0.871655127618732,True
+Where can I find installation guide?,Where can I find installation guide?,Information,Information,0.3544751860145922,True
+Internet speed is very slow during peak hours,Internet speed is very slow during peak hours,Problem,Problem,0.9469280136910501,True
+Need help with router configuration,Need help with router configuration,Request,Request,0.9951527805631591,True
+Can you help me with installation?,Can you help me with installation?,Request,Request,0.9951527805631591,True
+How can you help me fix this issue?,How can you help me fix this issue?,Information,Information,0.9708913122757472,True
+I need assistance with billing problem,I need assistance with billing problem,Request,Request,0.5053224880176129,True
+What should I do if modem not working?,What should I do if modem not working?,Information,Information,0.9320015150634251,True
+Please fix my internet immediately,Please fix my internet immediately,Problem,Problem,0.9007577338316791,True
+Where to report service outage?,Where to report service outage?,Information,Information,0.3544751860145922,True
+Request for new modem replacement,Request for new modem replacement,Request,Request,0.6359336141530222,True
+Problem with payment gateway,Problem with payment gateway,Problem,Problem,0.8901847746050762,True
+Information about new packages,Information about new packages,Information,Information,0.9963338486583079,True
+Request to change billing address,Request to change billing address,Request,Request,0.9999933413316812,True

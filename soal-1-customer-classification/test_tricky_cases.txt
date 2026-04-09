@@ -1,0 +1,26 @@
+# Tricky cases untuk test adaptive learning
+# Format: message|correct_label
+
+# Kasus ambiguous - sering salah
+Can you install new connection at my home?|Request
+How do I check my data usage?|Information
+Modem keeps disconnecting every hour|Problem
+I want to upgrade my internet package|Request
+What is the procedure to cancel subscription?|Information
+My bill is higher than expected|Problem
+Please send technician to fix connection|Request
+Where can I find installation guide?|Information
+Internet speed is very slow during peak hours|Problem
+Need help with router configuration|Request
+
+# Kasus dengan keyword conflict
+Can you help me with installation?|Request
+How can you help me fix this issue?|Information
+I need assistance with billing problem|Request
+What should I do if modem not working?|Information
+Please fix my internet immediately|Problem
+Where to report service outage?|Information
+Request for new modem replacement|Request
+Problem with payment gateway|Problem
+Information about new packages|Information
+Request to change billing address|Request

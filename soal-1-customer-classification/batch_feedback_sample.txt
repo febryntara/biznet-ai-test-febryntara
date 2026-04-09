@@ -1,0 +1,306 @@
+# Batch feedback file format: message|correct_label
+# One message per line
+# Valid labels: Information, Request, Problem
+# Delete data after use!
+
+
+The payment was deducted from my bank account but the transaction shows failed.|Problem
+I found a bug in the latest update affecting report generation.|Problem
+I am unable to login to my account despite using the correct credentials.|Problem
+I am having trouble accessing some features of the website.|Problem
+I keep getting an error message when trying to upload files to the portal.|Problem
+I am receiving too many promotional emails and would like to unsubscribe.|Request
+The mobile app is crashing frequently on my device.|Problem
+My subscription was supposed to be canceled, but I was charged again.|Problem
+The website is loading very slowly for me.|Problem
+The app is not syncing data across my devices.|Problem
+I have noticed some unauthorized transactions on my account.|Problem
+The website layout is distorted on my browser.|Problem
+I am having trouble setting up my account.|Problem
+I received a damaged product in my order.|Problem
+I need help with resetting my password.|Request
+I am unable to update my profile information.|Problem
+I am unable to download the software on my computer.|Problem
+I am not receiving any notifications from the app.|Problem
+I am unable to access the premium features despite having a subscription.|Problem
+I am unable to complete the checkout process on the website.|Problem
+I am unable to delete my account.|Request
+I have a question about the pricing for your services.|Information
+I am unable to track my order in real-time.|Problem
+I am receiving an 'Access Denied' error when trying to visit some pages.|Problem
+I am experiencing difficulty in navigating through the mobile app.|Problem
+I am unable to change my email address associated with the account.|Problem
+The product I received is different from what I ordered.|Problem
+I am unable to generate reports from the dashboard.|Problem
+The mobile app is not responding to touch inputs.|Problem
+I am unable to connect my social media accounts to the portal.|Problem
+I am having trouble understanding the billing statement for this month.|Information
+The website is not displaying any images or graphics for me.|Problem
+I am unable to add items to my shopping cart.|Problem
+I am unable to verify my email address.|Problem
+I am unable to see my purchase history on the account page.|Problem
+I am having trouble with the two-factor authentication process.|Problem
+The app is consuming too much battery on my phone.|Problem
+I am unable to contact customer support through the chat feature.|Problem
+I have a suggestion for improving the user interface of the mobile app.|Information
+I am unable to find the search bar on the website.|Information
+I am unable to apply a discount code during checkout.|Problem
+The mobile app is not compatible with my device's operating system.|Problem
+I am having trouble with the voice recognition feature on the app.|Problem
+I am unable to print invoices from the portal.|Problem
+I am having trouble with the language settings on the app.|Problem
+I am unable to link my bank account to the mobile app.|Problem
+I am unable to schedule a call with a representative through the portal.|Request
+I am unable to change the theme of the mobile app.|Problem
+I am unable to access the help center on the website.|Problem
+I am unable to export my data from the portal.|Problem
+I am having trouble with the map feature on the mobile app.|Problem
+I am unable to upgrade my subscription plan.|Request
+I am unable to find the user manual for the product online.|Information
+I am having trouble with the auto-fill feature on the checkout page.|Problem
+I am unable to cancel my order that was placed recently.|Request
+I am unable to share content from the app to social media platforms.|Problem
+I am unable to view the terms and conditions on the website.|Information
+I am having trouble with the search results on the web portal.|Problem
+I am unable to receive SMS alerts for account activity.|Problem
+I am having trouble with the video player on the website.|Problem
+I am unable to set a profile picture for my account.|Problem
+I am unable to see the available balance in my account.|Information
+I am having trouble with the font size on the mobile app.|Problem
+I am unable to view the FAQ section on the website.|Information
+I am having trouble with the location services on the app.|Problem
+I am unable to receive a refund for my canceled subscription.|Problem
+I am having trouble with the keyboard shortcuts on the portal.|Problem
+I am unable to redeem my loyalty points for discounts.|Problem
+I am having trouble with the zoom feature on the mobile app.|Problem
+I am unable to see the status of my support ticket.|Information
+I am having trouble with the filters on the search page.|Problem
+I am unable to receive an OTP for verifying my phone number.|Problem
+I am having trouble with the dark mode setting on the website.|Problem
+I am unable to see the delivery date for my order.|Information
+I am having trouble with the drag and drop feature on the portal.|Problem
+I am unable to access the community forum on the website.|Problem
+I am having trouble with the captcha on the registration page.|Problem
+I am unable to receive a verification code on my email.|Problem
+I am having trouble with the file compression feature on the portal.|Problem
+I am unable to see the product specifications on the website.|Information
+I am having trouble with the sorting options on the dashboard.|Problem
+I am unable to access the live demo on the website.|Problem
+I am having trouble with the browser compatibility on the portal.|Problem
+I am unable to receive any updates on my order status.|Information
+I am having trouble with the screen resolution on the mobile app.|Problem
+I am unable to see the contact information of the seller.|Information
+I am having trouble with the scroll bar on the web portal.|Problem
+I am unable to receive a confirmation email for my registration.|Problem
+I am having trouble with the data visualization on the dashboard.|Problem
+I am unable to access the tutorial videos on the website.|Problem
+I am having trouble with the plugin integration on the portal.|Problem
+I am unable to receive any emails from your company.|Problem
+I am having trouble with the page layout on the mobile app.|Problem
+I am unable to see the reviews for the product on the website.|Information
+I am having trouble with the loading time of the dashboard.|Problem
+I am unable to receive a password reset link on my email.|Problem
+I am having trouble with the character limit on the feedback form.|Problem
+I am unable to access the blog section on the website.|Problem
+I am having trouble with the image quality on the mobile app.|Problem
+I am unable to see the shipping costs for my order.|Information
+I am unable to see the terms of service on the mobile app.|Information
+I am having trouble with the font style on the web portal.|Problem
+I am unable to receive a notification for a new message.|Problem
+I am having trouble with the page navigation on the website.|Problem
+I am unable to see the history of my chat conversations.|Information
+I am having trouble with the data export feature on the mobile app.|Problem
+I am unable to receive a verification link on my phone.|Problem
+I am having trouble with the account recovery process.|Problem
+I am unable to see the estimated time of arrival for my delivery.|Information
+I am having trouble with the profile customization on the portal.|Problem
+I am unable to access the help documentation on the website.|Problem
+I am having trouble with the search functionality on the mobile app.|Problem
+I am unable to receive any SMS notifications from your company.|Problem
+I am having trouble with the UI design of the web portal.|Problem
+I am unable to see the product ratings on the website.|Information
+I am having trouble with the performance of the dashboard.|Problem
+I am unable to receive a confirmation code for my purchase.|Problem
+I am having trouble with the feedback submission on the portal.|Problem
+I am unable to access the user forum on the website.|Problem
+I am having trouble with the image loading on the mobile app.|Problem
+I am unable to see the price breakdown for my order.|Information
+I am having trouble with the sorting feature on the web portal.|Problem
+I am unable to receive any alerts for account login.|Problem
+I am having trouble with the video quality on the website.|Problem
+I am unable to set a notification preference for my account.|Request
+I am unable to see the remaining balance in my wallet.|Information
+I am having trouble with the touch sensitivity on the mobile app.|Problem
+I am unable to view the privacy policy on the website.|Information
+I am having trouble with the location tracking on the app.|Problem
+I am unable to receive a response from customer support.|Problem
+I am having trouble with the hotkeys on the portal.|Problem
+I am unable to redeem a gift card for my purchase.|Problem
+I am having trouble with the voice command feature on the mobile app.|Problem
+I am unable to see the status of my refund request.|Information
+I am having trouble with the search filters on the web portal.|Problem
+I am unable to receive an email for account verification.|Problem
+I am having trouble with the night mode setting on the website.|Problem
+I am unable to see the track number for my shipment.|Information
+I am having trouble with the file upload feature on the portal.|Problem
+I am unable to access the knowledge base on the website.|Information
+I am having trouble with the captcha on the login page.|Problem
+I am unable to receive a notification for a system update.|Problem
+I am having trouble with the file download feature on the portal.|Problem
+I am unable to see the product description on the website.|Information
+I am having trouble with the column filtering on the dashboard.|Problem
+I am unable to access the live chat on the website.|Problem
+I am having trouble with the cross-browser support on the portal.|Problem
+I am unable to receive any promotional offers via email.|Problem
+I am having trouble with the screen orientation on the mobile app.|Problem
+I am unable to see the contact details of the support team.|Information
+I am having trouble with the side bar on the web portal.|Problem
+I am unable to receive a confirmation message for my registration.|Problem
+I am having trouble with the data analysis on the dashboard.|Problem
+I am unable to access the training materials on the website.|Problem
+I am having trouble with the extension integration on the portal.|Problem
+I am unable to receive any newsletters from your company.|Problem
+I am having trouble with the header design on the mobile app.|Problem
+I am unable to see the user reviews for the product on the website.|Information
+I am having trouble with the response time of the dashboard.|Problem
+I am unable to receive a link for password recovery on my email.|Problem
+I am having trouble with the word count on the comment section.|Problem
+I am unable to access the news section on the website.|Problem
+I am having trouble with the resolution of images on the mobile app.|Problem
+I am unable to see the taxes and fees for my order.|Information
+I am having trouble with the terms and conditions page on the mobile app.|Information
+I am unable to change the font color on the web portal.|Request
+I am having trouble with the alert system for new messages.|Problem
+I am unable to navigate between pages on the website.|Problem
+I am having trouble with the conversation history feature.|Problem
+I am unable to export my profile data from the mobile app.|Problem
+I am having trouble with the verification link on my phone.|Problem
+I am unable to recover my account after several attempts.|Problem
+I am having trouble with the delivery estimation feature.|Problem
+I am unable to customize my profile on the portal.|Request
+I am having trouble with the help section on the website.|Problem
+I am unable to use the search bar on the mobile app.|Problem
+I am having trouble with the SMS alert system.|Problem
+I am unable to navigate the web portal due to its design.|Problem
+I am having trouble with the product rating system on the website.|Problem
+I am unable to improve the performance of my dashboard.|Problem
+I am having trouble with the purchase confirmation process.|Problem
+I am unable to submit feedback through the portal.|Problem
+I am having trouble with the user forum on the website.|Problem
+I am unable to load images on the mobile app.|Problem
+I am having trouble with the price breakdown on my order.|Information
+I am unable to sort data on the web portal.|Problem
+I am having trouble with the account login alerts.|Problem
+I am unable to play videos on the website.|Problem
+I am having trouble with the notification settings for my account.|Problem
+I am unable to view my wallet balance.|Information
+I am having trouble with the mobile app's touch interface.|Problem
+I am unable to read the privacy policy on the website.|Information
+I am having trouble with the location services on the app.|Problem
+I am unable to get a response from your support team.|Problem
+I am having trouble with the keyboard shortcuts on the portal.|Problem
+I am unable to use a gift card for my transaction.|Problem
+I am having trouble with the voice assistant on the mobile app.|Problem
+I am unable to check the status of my refund.|Information
+I am having trouble with the filtering options on the web portal.|Problem
+I am unable to receive the verification email for my account.|Problem
+I am having trouble with the night mode feature on the website.|Problem
+I am unable to see the tracking information for my order.|Information
+I am having trouble with the file upload tool on the portal.|Problem
+I am unable to access the help documentation on the website.|Information
+I am having trouble with the captcha verification on the login page.|Problem
+I am unable to receive notifications for system updates.|Problem
+I am having trouble with the file download tool on the portal.|Problem
+I am unable to see the detailed product description on the website.|Information
+I am having trouble with the column filtering on the reporting dashboard.|Problem
+I am unable to access the live support chat on the website.|Problem
+I am having trouble with the cross-browser compatibility on the portal.|Problem
+I am unable to receive any promotional deals via email.|Problem
+I am having trouble with the screen orientation on the mobile app.|Problem
+I am unable to find the contact details of the support team.|Information
+I am having trouble with the navigation menu on the web portal.|Problem
+I am unable to receive a confirmation message for my account registration.|Problem
+I am having trouble with the data analysis tools on the dashboard.|Problem
+I am unable to access the training videos on the website.|Problem
+I am having trouble with the third-party extension integration.|Problem
+I am unable to receive any newsletters from your company.|Problem
+I am having trouble with the header layout on the mobile app.|Problem
+I am unable to see the customer reviews for the product.|Information
+I am having trouble with the response time of the reporting dashboard.|Problem
+I am unable to receive a link for password recovery.|Request
+I am having trouble with the word count limit on comments.|Problem
+I am unable to access the news archive on the website.|Problem
+I am having trouble with the resolution of photos on the mobile app.|Problem
+I am unable to see the taxes and service fees for my order.|Information
+I am having trouble with the terms and conditions on the mobile app.|Information
+I am unable to change the font color settings on the web portal.|Request
+I am having trouble with the alert system for incoming messages.|Problem
+I am unable to navigate between different pages on the website.|Problem
+I am having trouble with the chat history search feature.|Problem
+I am unable to export my account data from the mobile app.|Problem
+I am having trouble with the verification link sent to my phone.|Problem
+I am unable to recover my account after multiple attempts.|Problem
+I am having trouble with the delivery date estimation.|Information
+I am unable to customize my profile details on the portal.|Request
+I am having trouble with the help and support section on the website.|Problem
+I am unable to use the search function on the mobile app.|Problem
+I am having trouble with the SMS notification system.|Problem
+I am unable to navigate the web portal effectively.|Problem
+I am having trouble with the product rating feature.|Problem
+I am unable to improve the performance of my personal dashboard.|Problem
+I am having trouble with the purchase confirmation email.|Problem
+I am unable to submit my feedback through the portal.|Problem
+I am having trouble with the community forum on the website.|Problem
+I am unable to load high-resolution images on the mobile app.|Problem
+I am having trouble with the price breakdown on the checkout page.|Information
+I am unable to sort the data tables on the web portal.|Problem
+I am having trouble with the account login security alerts.|Problem
+I am unable to play the tutorial videos on the website.|Problem
+I am having trouble with the notification preferences for my account.|Problem
+I am unable to see the current balance in my wallet.|Information
+I am having trouble with the touch interface on the mobile app.|Problem
+I am unable to read the privacy policy document on the website.|Information
+I am having trouble with the GPS location services on the app.|Problem
+I am unable to get a timely response from your support team.|Problem
+I am having trouble with the keyboard shortcut configuration.|Problem
+I am unable to use my gift card for this transaction.|Problem
+I am having trouble with the voice recognition on the mobile app.|Problem
+I am unable to check the status of my recent refund.|Information
+I am having trouble with the filtering criteria on the web portal.|Problem
+I am unable to receive the verification email for my new account.|Problem
+I am having trouble with the dark mode toggle on the website.|Problem
+I am unable to see the tracking number for my package.|Information
+I am having trouble with the file attachment feature on the portal.|Problem
+I am unable to access the online knowledge base.|Information
+I am having trouble with the captcha on the sign-up page.|Problem
+I am unable to receive notifications for app updates.|Problem
+I am having trouble with the file export feature on the portal.|Problem
+I am unable to see the full product specifications.|Information
+I am having trouble with the row filtering on the dashboard.|Problem
+I am unable to access the live chat representative.|Problem
+I am having trouble with the browser support for the portal.|Problem
+I am unable to receive any special offers via email.|Problem
+I am having trouble with the screen rotation on the mobile app.|Problem
+I am unable to find the email address for support.|Information
+I am having trouble with the navigation bar on the web portal.|Problem
+I am unable to receive a confirmation for my subscription.|Problem
+I am having trouble with the data visualization tools.|Problem
+I am unable to access the webinar section on the website.|Problem
+I am having trouble with the API integration on the portal.|Problem
+I am unable to receive any marketing emails.|Problem
+I am having trouble with the footer design on the mobile app.|Problem
+I am unable to see the total number of reviews for the product.|Information
+I am having trouble with the loading speed of the dashboard.|Problem
+I am unable to receive a password reset code.|Request
+I am having trouble with the character limit on the support form.|Problem
+I am unable to access the press release section on the website.|Problem
+I am having trouble with the image clarity on the mobile app.|Problem
+I am unable to see the shipping and handling fees.|Information
+I am having trouble with the privacy settings on the mobile app.|Problem
+I am unable to change the font size on the web portal.|Request
+I am having trouble with the notification system for new alerts.|Problem
+I am unable to switch between tabs on the website.|Problem
+I am having trouble with the message history feature.|Problem
+I am unable to download my profile information.|Request
+I am having trouble with the SMS verification code.|Problem
+I am unable to recover my deleted account.|Request
