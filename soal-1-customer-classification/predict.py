@@ -11,7 +11,7 @@ import pandas as pd
 import os
 from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 def clean_text(text):
@@ -130,14 +130,15 @@ def retrain_model():
     
     # Create new pipeline
     tfidf = TfidfVectorizer(
-        max_features=3500,
-        ngram_range=(1, 2),
+        max_features=5000,
+        ngram_range=(1, 3),
         stop_words='english',
-        min_df=1
+        min_df=2,
+        max_df=0.85
     )
     
-    nb = MultinomialNB(alpha=0.1)
-    pipeline = Pipeline([('tfidf', tfidf), ('nb', nb)])
+    lr = LogisticRegression(C=1.0, max_iter=1000, solver='lbfgs', random_state=42)
+    pipeline = Pipeline([('tfidf', tfidf), ('lr', lr)])
     
     # Retrain
     print("Retraining model...")
