@@ -32,28 +32,28 @@ def clean_text(text):
     end_positions = [pos for pos in [dot_pos, question_pos] if pos != -1]
     
     if end_positions:
-        # Ambil bagian sebelum tanda baca pertama
         end_pos = min(end_positions)
         cleaned = text[:end_pos + 1].strip()
     else:
-        # Jika tidak ada tanda baca, ambil seluruh teks
         cleaned = text.strip()
     
     return cleaned
 
 def load_model():
-    """Memuat model yang sudah disimpan."""
+    """Memuat model yang sudah disimpan, termasuk best_params jika ada."""
     try:
         with open('models/customer_classifier.pkl', 'rb') as f:
             model_data = pickle.load(f)
         
-        model = model_data['model']
+        model         = model_data['model']
         label_mapping = model_data['label_mapping']
-        
-        # Create inverse mapping
         inverse_mapping = {v: k for k, v in label_mapping.items()}
-        
-        return model, label_mapping, inverse_mapping
+
+        # Ambil best_params jika tersimpan (hasil GridSearch dari train_model.py)
+        best_params = model_data.get('best_params', {})
+
+        return model, label_mapping, inverse_mapping, best_params
+
     except FileNotFoundError:
         print("Error: Model file not found.")
         print("Please train the model first:")
@@ -67,26 +67,23 @@ def load_feedback_data():
     if os.path.exists(feedback_path):
         return pd.read_csv(feedback_path)
     else:
-        # Create empty dataframe
         return pd.DataFrame(columns=['text', 'cleaned_text', 'prediction', 'correct_label', 'timestamp'])
 
 def save_feedback(text, cleaned_text, prediction, correct_label):
     """Menyimpan feedback ke file."""
     feedback_path = "models/feedback_data.csv"
     
-    # Load existing data
     if os.path.exists(feedback_path):
         df = pd.read_csv(feedback_path)
     else:
         df = pd.DataFrame(columns=['text', 'cleaned_text', 'prediction', 'correct_label', 'timestamp'])
     
-    # Add new feedback
     new_row = {
-        'text': text,
-        'cleaned_text': cleaned_text,
-        'prediction': prediction,
-        'correct_label': correct_label,
-        'timestamp': datetime.now().isoformat()
+        'text'          : text,
+        'cleaned_text'  : cleaned_text,
+        'prediction'    : prediction,
+        'correct_label' : correct_label,
+        'timestamp'     : datetime.now().isoformat()
     }
     
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
@@ -94,78 +91,121 @@ def save_feedback(text, cleaned_text, prediction, correct_label):
     
     return df
 
+def build_pipeline_from_params(best_params):
+    """
+    Buat pipeline TF-IDF + LR dari best_params hasil GridSearch.
+    Jika best_params kosong (model lama tanpa GridSearch), pakai default.
+    """
+    if best_params:
+        print("  Menggunakan best_params dari GridSearch:")
+        for k, v in best_params.items():
+            print(f"    {k}: {v}")
+
+        tfidf = TfidfVectorizer(
+            max_features  = best_params.get('tfidf__max_features', 5000),
+            ngram_range   = best_params.get('tfidf__ngram_range',  (1, 2)),
+            stop_words    = 'english',
+            min_df        = best_params.get('tfidf__min_df',       1),
+            max_df        = best_params.get('tfidf__max_df',       0.90),
+            sublinear_tf  = True,
+            analyzer      = 'word',
+            token_pattern = r'(?u)\b\w+\b'
+        )
+        lr = LogisticRegression(
+            C            = best_params.get('lr__C',            1.0),
+            class_weight = best_params.get('lr__class_weight', None),
+            max_iter     = 1000,
+            solver       = 'lbfgs',
+            random_state = 42
+        )
+    else:
+        print("  best_params tidak ditemukan, menggunakan parameter default.")
+        tfidf = TfidfVectorizer(
+            max_features  = 5000,
+            ngram_range   = (1, 2),
+            stop_words    = 'english',
+            min_df        = 1,
+            max_df        = 0.90,
+            sublinear_tf  = True,
+            analyzer      = 'word',
+            token_pattern = r'(?u)\b\w+\b'
+        )
+        lr = LogisticRegression(
+            C            = 1.0,
+            max_iter     = 1000,
+            solver       = 'lbfgs',
+            random_state = 42
+        )
+
+    return Pipeline([('tfidf', tfidf), ('lr', lr)])
+
 def retrain_model():
-    """Retrain model dengan data feedback."""
+    """Retrain model dengan data feedback, menggunakan best_params dari GridSearch."""
     print("\n=== Retraining Model dengan Feedback ===")
-    
+
+    # Load model + best_params
+    _, label_mapping, _, best_params = load_model()
+
     # Load original training data
     train_df = pd.read_csv("processed/train.csv")
-    
+
     # Load feedback data
     feedback_df = load_feedback_data()
-    
+
     if len(feedback_df) == 0:
         print("No feedback data available for retraining.")
         return False
-    
-    print(f"Original training data: {len(train_df)} samples")
-    print(f"Feedback data: {len(feedback_df)} samples")
-    
+
+    print(f"Original training data : {len(train_df)} samples")
+    print(f"Feedback data          : {len(feedback_df)} samples")
+
     # Combine data
     combined_df = pd.concat([
         train_df[['Cleaned_Text', 'Label']].rename(columns={'Cleaned_Text': 'text', 'Label': 'label'}),
         feedback_df[['cleaned_text', 'correct_label']].rename(columns={'cleaned_text': 'text', 'correct_label': 'label'})
     ], ignore_index=True)
-    
-    print(f"Combined training data: {len(combined_df)} samples")
-    
+
+    print(f"Combined training data  : {len(combined_df)} samples")
+
     # Prepare data
     X = combined_df['text']
     y = combined_df['label']
-    
-    # Label mapping
-    label_mapping = {'Information': 0, 'Request': 1, 'Problem': 2}
     y_encoded = y.map(label_mapping)
-    
-    # Create new pipeline
-    tfidf = TfidfVectorizer(
-        max_features=5000,
-        ngram_range=(1, 3),
-        stop_words='english',
-        min_df=2,
-        max_df=0.85
-    )
-    
-    lr = LogisticRegression(C=1.0, max_iter=1000, solver='lbfgs', random_state=42)
-    pipeline = Pipeline([('tfidf', tfidf), ('lr', lr)])
-    
+
+    # Build pipeline pakai best_params
+    print("\nMembangun pipeline:")
+    pipeline = build_pipeline_from_params(best_params)
+
     # Retrain
-    print("Retraining model...")
+    print("\nRetraining model...")
     pipeline.fit(X, y_encoded)
-    
-    # Save retrained model
-    model_path = "models/customer_classifier_retrained.pkl"
-    with open(model_path, 'wb') as f:
+    print("Retraining selesai!")
+
+    now = datetime.now().isoformat()
+
+    # Simpan retrained model (backup)
+    retrained_path = "models/customer_classifier_retrained.pkl"
+    with open(retrained_path, 'wb') as f:
         pickle.dump({
-            'model': pipeline,
-            'label_mapping': label_mapping,
-            'training_date': datetime.now().isoformat(),
-            'original_samples': len(train_df),
-            'feedback_samples': len(feedback_df)
+            'model'            : pipeline,
+            'label_mapping'    : label_mapping,
+            'best_params'      : best_params,
+            'training_date'    : now,
+            'original_samples' : len(train_df),
+            'feedback_samples' : len(feedback_df)
         }, f)
-    
-    print(f"Retrained model saved to {model_path}")
-    
-    # Also update the main model
+    print(f"Retrained model saved to {retrained_path}")
+
+    # Update main model (termasuk best_params agar load_model() tetap bawa params)
     main_model_path = "models/customer_classifier.pkl"
     with open(main_model_path, 'wb') as f:
         pickle.dump({
-            'model': pipeline,
-            'label_mapping': label_mapping
+            'model'         : pipeline,
+            'label_mapping' : label_mapping,
+            'best_params'   : best_params
         }, f)
-    
     print(f"Main model updated at {main_model_path}")
-    
+
     return True
 
 def process_batch_file(file_path, auto_retrain=False, min_feedback=5):
@@ -175,7 +215,7 @@ def process_batch_file(file_path, auto_retrain=False, min_feedback=5):
     print(f"Processing batch file: {file_path}")
     
     # Load model
-    model, label_mapping, inverse_mapping = load_model()
+    model, label_mapping, inverse_mapping, best_params = load_model()
     
     # Read txt file
     try:
@@ -194,33 +234,30 @@ def process_batch_file(file_path, auto_retrain=False, min_feedback=5):
         if not line or line.startswith('#'):
             continue
         
-        # Parse format: message|label
         parts = line.split('|', 1)
         if len(parts) != 2:
             errors.append(f"Line {line_num}: Invalid format '{line}'")
             continue
         
         message, correct_label = parts
-        message = message.strip()
+        message       = message.strip()
         correct_label = correct_label.strip()
         
-        # Validate label
         valid_labels = ['Information', 'Request', 'Problem']
         if correct_label not in valid_labels:
             errors.append(f"Line {line_num}: Invalid label '{correct_label}'. Must be one of: {', '.join(valid_labels)}")
             continue
         
         batch_data.append({
-            'line_num': line_num,
-            'message': message,
-            'correct_label': correct_label
+            'line_num'      : line_num,
+            'message'       : message,
+            'correct_label' : correct_label
         })
     
     if errors:
         print("\nErrors found:")
         for error in errors:
             print(f"  {error}")
-        
         if not batch_data:
             print("No valid data to process.")
             return
@@ -228,96 +265,85 @@ def process_batch_file(file_path, auto_retrain=False, min_feedback=5):
     print(f"\nFound {len(batch_data)} valid messages to process")
     
     # Process each message
-    results = []
+    results        = []
     feedback_added = 0
     
     for item in batch_data:
-        message = item['message']
+        message       = item['message']
         correct_label = item['correct_label']
         
-        # Clean text
         cleaned_text = clean_text(message)
         
-        # Predict
         try:
             prediction_encoded = model.predict([cleaned_text])[0]
-            prediction = inverse_mapping[prediction_encoded]
+            prediction         = inverse_mapping[prediction_encoded]
+            probabilities      = model.predict_proba([cleaned_text])[0]
+            confidence         = probabilities[prediction_encoded]
+            is_correct         = (prediction == correct_label)
             
-            # Get confidence
-            probabilities = model.predict_proba([cleaned_text])[0]
-            confidence = probabilities[prediction_encoded]
-            
-            # Check if prediction is correct
-            is_correct = (prediction == correct_label)
-            
-            # Save feedback if wrong
             if not is_correct:
                 save_feedback(message, cleaned_text, prediction, correct_label)
                 feedback_added += 1
             
-            result = {
-                'message': message[:80] + '...' if len(message) > 80 else message,
-                'cleaned_text': cleaned_text[:60] + '...' if len(cleaned_text) > 60 else cleaned_text,
-                'prediction': prediction,
-                'correct_label': correct_label,
-                'confidence': confidence,
-                'is_correct': is_correct
-            }
-            
-            results.append(result)
+            results.append({
+                'message'       : message[:80] + '...' if len(message) > 80 else message,
+                'cleaned_text'  : cleaned_text[:60] + '...' if len(cleaned_text) > 60 else cleaned_text,
+                'prediction'    : prediction,
+                'correct_label' : correct_label,
+                'confidence'    : confidence,
+                'is_correct'    : is_correct
+            })
             
         except Exception as e:
             print(f"Error processing line {item['line_num']}: {e}")
     
     # Print summary
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("BATCH PROCESSING SUMMARY")
-    print("="*80)
+    print("=" * 80)
     
     correct_count = sum(1 for r in results if r['is_correct'])
-    accuracy = correct_count / len(results) if results else 0
+    accuracy      = correct_count / len(results) if results else 0
     
-    print(f"Total messages processed: {len(results)}")
-    print(f"Correct predictions: {correct_count}")
-    print(f"Accuracy: {accuracy:.2%}")
-    print(f"Feedback added: {feedback_added}")
+    print(f"Total messages processed : {len(results)}")
+    print(f"Correct predictions      : {correct_count}")
+    print(f"Accuracy                 : {accuracy:.2%}")
+    print(f"Feedback added           : {feedback_added}")
     
     # Show incorrect predictions
     incorrect_results = [r for r in results if not r['is_correct']]
     if incorrect_results:
         print(f"\nINCORRECT PREDICTIONS ({len(incorrect_results)}):")
         print("-" * 80)
-        for i, r in enumerate(incorrect_results[:10], 1):  # Show first 10
-            print(f"{i}. Message: {r['message']}")
-            print(f"   Cleaned: {r['cleaned_text']}")
+        for i, r in enumerate(incorrect_results[:10], 1):
+            print(f"{i}. Message  : {r['message']}")
+            print(f"   Cleaned  : {r['cleaned_text']}")
             print(f"   Predicted: {r['prediction']} (confidence: {r['confidence']:.4f})")
-            print(f"   Correct: {r['correct_label']}")
+            print(f"   Correct  : {r['correct_label']}")
             print()
-        
         if len(incorrect_results) > 10:
             print(f"... and {len(incorrect_results) - 10} more")
     
-    # Show correct predictions summary
     if correct_count > 0:
+        avg_conf = sum(r['confidence'] for r in results if r['is_correct']) / correct_count
         print(f"\nCORRECT PREDICTIONS ({correct_count}):")
-        print(f"  Average confidence: {sum(r['confidence'] for r in results if r['is_correct']) / correct_count:.4f}")
+        print(f"  Average confidence: {avg_conf:.4f}")
     
     # Save detailed results to CSV
     if results:
-        results_df = pd.DataFrame(results)
+        results_df  = pd.DataFrame(results)
         output_file = file_path.replace('.txt', '_results.csv')
         results_df.to_csv(output_file, index=False)
         print(f"\nDetailed results saved to: {output_file}")
     
-    # Auto retrain if enabled
+    # Auto retrain
     if auto_retrain and feedback_added >= min_feedback:
-        print(f"\nAuto-retraining enabled with {feedback_added} new feedback samples...")
+        print(f"\nAuto-retraining enabled dengan {feedback_added} feedback samples baru...")
         retrain_model()
     elif feedback_added > 0:
-        print(f"\n{feedback_added} feedback samples added.")
-        print(f"Run 'python predict.py --retrain' to update model with new feedback.")
+        print(f"\n{feedback_added} feedback samples ditambahkan.")
+        print("Jalankan 'python predict.py --retrain' untuk update model.")
     
-    # Load updated feedback count
     feedback_df = load_feedback_data()
     print(f"\nTotal feedback samples in database: {len(feedback_df)}")
 
@@ -338,7 +364,6 @@ Hi Support, How do I check data usage?|Information
 Hi Support, Modem keeps disconnecting|Problem
 Hi Support, I want to cancel my subscription|Request
 """
-    
     sample_path = "batch_feedback_sample.txt"
     with open(sample_path, 'w') as f:
         f.write(sample_content)
@@ -352,11 +377,11 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Batch feedback processing for adaptive learning')
-    parser.add_argument('--file', type=str, help='TXT file with messages and correct labels (format: message|label)')
-    parser.add_argument('--auto-retrain', action='store_true', help='Auto retrain model after processing if enough feedback')
-    parser.add_argument('--min-feedback', type=int, default=5, help='Minimum feedback samples for auto-retrain (default: 5)')
-    parser.add_argument('--create-sample', action='store_true', help='Create sample batch file')
-    parser.add_argument('--show-feedback', action='store_true', help='Show current feedback data')
+    parser.add_argument('--file',          type=str, help='TXT file dengan messages dan correct labels (format: message|label)')
+    parser.add_argument('--auto-retrain',  action='store_true', help='Auto retrain model setelah processing jika feedback cukup')
+    parser.add_argument('--min-feedback',  type=int, default=5, help='Minimum feedback samples untuk auto-retrain (default: 5)')
+    parser.add_argument('--create-sample', action='store_true', help='Buat sample batch file')
+    parser.add_argument('--show-feedback', action='store_true', help='Tampilkan feedback data yang tersimpan')
     
     args = parser.parse_args()
     
