@@ -130,11 +130,10 @@ def retrain_model():
     
     # Create new pipeline
     tfidf = TfidfVectorizer(
-        max_features=5000,
+        max_features=3500,
         ngram_range=(1, 2),
         stop_words='english',
-        min_df=2,
-        max_df=0.95
+        min_df=1
     )
     
     nb = MultinomialNB(alpha=0.1)
@@ -479,7 +478,6 @@ def main():
         print("  python predict.py --adaptive")
         print("  python predict.py --retrain")
         print("\nFeatures:")
-        print("  - Snorkel labeling (14 labeling functions)")
         print("  - Adaptive learning with feedback collection")
         print("  - Model retraining capability")
         print("  - Confidence scores and probabilities")

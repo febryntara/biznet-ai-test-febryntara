@@ -1,0 +1,50 @@
+What is the specific bandwidth ratio between upload and download for the 100mbps plan?|Information
+Does the fiber optic technology used in this area support symmetrical speeds?|Information
+Are there any planned network optimizations that might affect connection stability tonight?|Information
+How does the ISP handle data encryption to ensure secure browsing for home users?|Information
+What are the technical specifications of the latest Wi-Fi 6 router provided by the company?|Information
+Is it possible to track the real-time location of the technician arriving for my appointment?|Information
+What is the standard procedure for getting a refund if a payment was deducted twice?|Information
+Are there any specific weather conditions that could physically damage the outdoor fiber cables?|Information
+How can I find out if my current router firmware is vulnerable to recent security threats?|Information
+What is the difference in latency when using your DNS versus a public one like Cloudflare?|Information
+Is there a loyalty tier for customers who have maintained an active account for over five years?|Information
+What are the power requirements for the ONT to ensure it doesn't short circuit during a surge?|Information
+How is the Fair Usage Policy (FUP) calculated if I have multiple add-on data packs?|Information
+Are there any legal restrictions on hosting a private Minecraft server on a home connection?|Information
+What are the bank administrative codes required for setting up an auto-payment via mobile banking?|Information
+Is there a way to verify if a neighbor is tapping into my Wi-Fi signal without permission?|Information
+What is the maximum range of the 5GHz signal in a house with thick brick walls?|Information
+How do I differentiate between a localized modem failure and a broader regional outage?|Information
+Are the Set-Top Boxes provided for TV services compatible with 4K HDR10 technology?|Information
+What documents are officially required to move a subscription from a residential to a business name?|Information
+Is there a specific period during the night when the system automatically resets the IP address?|Information
+How can I check the status of my area's fiber coverage expansion through the official portal?|Information
+What is the standard response time for a critical technical ticket in a suburban area?|Information
+Are there any built-in parental control features that work directly at the hardware level?|Information
+How does the ISP prioritize traffic for video conferencing apps like Zoom and Microsoft Teams?|Information
+What is the replacement cost for an ONT device if it is damaged by a lightning strike?|Information
+Is it possible to access the router's internal logs to see connection drop history?|Information
+What are the terms regarding the return of equipment after a contract has naturally expired?|Information
+How can I confirm if my payment made via a third-party kiosk has been reconciled?|Information
+Are there any specific frequency bands that might interfere with the router's 2.4GHz signal?|Information
+What is the process for a foreigner to register for an internet account using a passport?|Information
+Is there a mobile app feature that allows me to reboot the router from a remote location?|Information
+How do I know if the slow speed is caused by a faulty LAN cable or the ISP's network?|Information
+What are the benefits of the 'Fixed IP' service compared to the standard dynamic IP?|Information
+Are there any promotional bundles that combine home fiber with mobile data plans?|Information
+What is the exact deadline for bill payments before a late fee is automatically applied?|Information
+How can I find out the results of the signal survey conducted in my apartment building?|Information
+Is there a technical manual available for the provided STB to understand error codes?|Information
+What happens to the internet speed if the fiber cable is bent at a sharp 90-degree angle?|Information
+How do I verify the authenticity of an email claiming to be from the billing department?|Information
+Is there a maximum number of devices that can be connected before the IP pool is exhausted?|Information
+What are the criteria for receiving a free hardware upgrade to the latest model?|Information
+How is the prorated bill calculated if I join during a leap year or a 31-day month?|Information
+Are there any specific antivirus software brands that are recommended for use with your network?|Information
+What is the estimated uptime percentage guaranteed for the premium residential package?|Information
+How do I check if my account is eligible for a temporary speed boost during the holidays?|Information
+Is the fiber optic cable used in this district fire-resistant or heat-protected?|Information
+What are the security protocols used for the provider's public Wi-Fi hotspots?|Information
+How can I see a list of all devices that have historically connected to my home network?|Information
+Is there a dedicated support line for expats who require assistance in English?|Information

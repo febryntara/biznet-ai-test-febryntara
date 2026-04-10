@@ -129,14 +129,14 @@ def retrain_model():
     
     # Create new pipeline
     tfidf = TfidfVectorizer(
-        max_features=5000,
+        max_features=3500,
         ngram_range=(1, 2),
         stop_words='english',
-        min_df=2,
+        min_df=1,
         max_df=0.95
     )
     
-    nb = MultinomialNB(alpha=0.1)
+    nb = MultinomialNB(alpha=0.5)
     pipeline = Pipeline([('tfidf', tfidf), ('nb', nb)])
     
     # Retrain

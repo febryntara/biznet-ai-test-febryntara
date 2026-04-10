@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-"""
-Training Multinomial Naive Bayes dengan TF-IDF menggunakan data labeled Snorkel.
-"""
 
 import pandas as pd
 import pickle
@@ -15,9 +12,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def load_data():
-    """Memuat data training dan testing dari Snorkel preprocessing."""
-    print("Memuat dataset Snorkel...")
-    
+    """Load data dari file CSV."""    
     train_df = pd.read_csv("processed/train.csv")
     test_df = pd.read_csv("processed/test.csv")
     
@@ -45,10 +40,10 @@ def create_pipeline():
     """
     # TF-IDF Vectorizer dengan optimasi untuk text ISP tickets
     tfidf = TfidfVectorizer(
-        max_features=5000,           # 5000 fitur terbaik
-        ngram_range=(1, 3),          # unigrams, bigrams, dan trigrams
+        max_features=3500,           # 3500 fitur terbaik
+        ngram_range=(1, 2),          # unigrams, bigrams, dan trigrams
         stop_words='english',        # hapus stop words
-        min_df=2,                    # minimal muncul 2 kali
+        min_df=1,                    # minimal muncul 1 kali
         max_df=0.9,                  # maksimal di 90% dokumen
         sublinear_tf=True,           # gunakan sublinear TF scaling
         analyzer='word',             # analisis per kata
@@ -57,7 +52,7 @@ def create_pipeline():
     
     # Multinomial Naive Bayes dengan parameter tuning
     nb = MultinomialNB(
-        alpha=0.1,      # smoothing parameter
+        alpha=0.5,      # smoothing parameter
         fit_prior=True  # learn class prior probabilities
     )
     
@@ -100,7 +95,7 @@ def train_model(pipeline, X_train, y_train):
 
 def evaluate_model(pipeline, X_test, y_test, label_mapping):
     """Evaluasi model secara komprehensif."""
-    print("\n=== Evaluasi Model (Snorkel Labels) ===")
+    print("\n=== Evaluasi Model ===")
     
     # Encode labels
     y_test_encoded = y_test.map(label_mapping)
@@ -141,7 +136,7 @@ def evaluate_model(pipeline, X_test, y_test, label_mapping):
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
                 xticklabels=['Information', 'Request', 'Problem'],
                 yticklabels=['Information', 'Request', 'Problem'])
-    plt.title('Confusion Matrix - Snorkel Labels')
+    plt.title('Confusion Matrix')
     plt.ylabel('True Label')
     plt.xlabel('Predicted Label')
     plt.tight_layout()
@@ -185,90 +180,51 @@ def save_model(pipeline, label_mapping, feature_names=None):
             f.write(f"{label}: {code}\n")
     
     print(f"Label mapping saved to {mapping_path}")
-    
-    # Save model info
-    info_path = os.path.join(models_dir, "model_info.txt")
-    with open(info_path, 'w') as f:
-        f.write("=== Model Information ===\n")
-        f.write(f"Algorithm: Multinomial Naive Bayes\n")
-        f.write(f"Features: TF-IDF (5000 features, ngram_range=(1,3))\n")
-        f.write(f"Labeling: Snorkel Programmatic Labeling (14 functions)\n")
-        f.write(f"\n=== Dataset Statistics ===\n")
-        f.write(f"Total samples: 17,264\n")
-        f.write(f"Training samples: 13,811 (80%)\n")
-        f.write(f"Testing samples: 3,453 (20%)\n")
-        f.write(f"\n=== Label Distribution ===\n")
-        f.write(f"Information: 6,121 samples (35.5%)\n")
-        f.write(f"Request: 5,917 samples (34.3%)\n")
-        f.write(f"Problem: 5,226 samples (30.3%)\n")
-        f.write(f"\n=== Performance Metrics ===\n")
-        f.write(f"Accuracy: 1.0000\n")
-        f.write(f"Precision: 1.0000\n")
-        f.write(f"Recall: 1.0000\n")
-        f.write(f"F1-Score: 1.0000\n")
-        f.write(f"Cross-Validation Mean: 1.0000\n")
-        f.write(f"\n=== Model Characteristics ===\n")
-        f.write(f"- 100% accuracy on test set\n")
-        f.write(f"- Perfect confusion matrix (no misclassifications)\n")
-        f.write(f"- High confidence predictions (mean > 0.95)\n")
-        f.write(f"- Consistent cross-validation scores\n")
-        f.write(f"\n=== Last Updated ===\n")
-        f.write(f"Model trained: April 10, 2026\n")
-        f.write(f"Evaluation: Perfect performance with Snorkel labels\n")
-    
-    print(f"Model info saved to {info_path}")
 
 def test_examples(pipeline, label_mapping):
-    """Test dengan contoh-contoh ISP tickets."""
+    """Test dengan contoh-contoh ISP tickets (expected vs predicted)."""
     print("\n=== Contoh Prediksi ISP Tickets ===")
-    
+
     inverse_mapping = {v: k for k, v in label_mapping.items()}
-    
+
+    # Format: (teks, label_yang_benar)
     examples = [
-        # Information examples
-        "Hi Support, Where is your headquarters located?",
-        "Hi Support, What are your business hours?",
-        "Hi Support, How do I check my data usage?",
-        "Hi Support, Does your service cover South Jakarta area?",
-        "Hi Support, What is the price for Business 100Mbps plan?",
-        
-        # Request examples
-        "Hi Support, I need to reset my password",
-        "Hi Support, Please send me last month's invoice",
-        "Hi Support, Can you install new connection at my address?",
-        "Hi Support, I want to cancel my subscription",
-        "Hi Support, Need technician to check fiber optic line",
-        
-        # Problem examples
-        "Hi Support, The application crashes every time",
-        "Hi Support, My internet is very slow today",
-        "Hi Support, I was charged twice for this month",
-        "Hi Support, Cannot login to my account",
-        "Hi Support, Modem keeps disconnecting every few minutes"
+        # Information
+        ("Where is your headquarters located?",      "Information"),
+        ("What are your business hours?",            "Information"),
+        ("How do I check my data usage?",            "Information"),
+        ("Does your service cover South Jakarta?",   "Information"),
+        ("What is the price for Business 100Mbps?",  "Information"),
+        # Request
+        ("I need to reset my password",              "Request"),
+        ("Please send me last month's invoice",      "Request"),
+        ("Can you install new connection at my address?", "Request"),
+        ("I want to cancel my subscription",         "Request"),
+        ("Need technician to check fiber optic line","Request"),
+        # Problem
+        ("The application crashes every time",       "Problem"),
+        ("My internet is very slow today",           "Problem"),
+        ("I was charged twice for this month",       "Problem"),
+        ("Cannot login to my account",               "Problem"),
+        ("Modem keeps disconnecting every few minutes", "Problem"),
     ]
-    
-    results = {'Information': [], 'Request': [], 'Problem': []}
-    
-    for i, example in enumerate(examples):
-        prediction_encoded = pipeline.predict([example])[0]
-        prediction = inverse_mapping[prediction_encoded]
-        
-        # Get probabilities
-        probabilities = pipeline.predict_proba([example])[0]
-        confidence = probabilities[prediction_encoded]
-        
-        results[prediction].append({
-            'text': example[:60] + '...' if len(example) > 60 else example,
-            'confidence': confidence
-        })
-    
-    # Print results by category
-    for category in ['Information', 'Request', 'Problem']:
-        if results[category]:
-            print(f"\n{category} predictions:")
-            for item in results[category]:
-                print(f"  ✓ {item['text']}")
-                print(f"    Confidence: {item['confidence']:.4f}")
+
+    correct = 0
+    print(f"\n{'Status':<6} {'Expected':<13} {'Predicted':<13} {'Conf':>6}  Text")
+    print("-" * 75)
+
+    for text, expected in examples:
+        pred_encoded = pipeline.predict([text])[0]
+        predicted    = inverse_mapping[pred_encoded]
+        confidence   = pipeline.predict_proba([text])[0][pred_encoded]
+        status       = "✓" if predicted == expected else "✗"
+        if predicted == expected:
+            correct += 1
+        short_text = text[:45] + "..." if len(text) > 45 else text
+        print(f"  {status}    {expected:<13} {predicted:<13} {confidence:>5.2f}  {short_text}")
+
+    print("-" * 75)
+    print(f"  Contoh benar: {correct}/{len(examples)}")
 
 def cross_validate_model(X, y, label_mapping):
     """Cross-validation untuk evaluasi robust."""
@@ -278,8 +234,8 @@ def cross_validate_model(X, y, label_mapping):
     
     # Create pipeline for CV
     pipeline_cv = Pipeline([
-        ('tfidf', TfidfVectorizer(max_features=5000, ngram_range=(1, 2), stop_words='english')),
-        ('nb', MultinomialNB(alpha=0.1))
+        ('tfidf', TfidfVectorizer(max_features=3500, ngram_range=(1, 2), stop_words='english', min_df=1)),
+        ('nb', MultinomialNB(alpha=0.5))
     ])
     
     # Encode labels
@@ -295,7 +251,7 @@ def cross_validate_model(X, y, label_mapping):
     return scores.mean()
 
 def main():
-    print("=== Training Multinomial Naive Bayes dengan Snorkel Labels ===")
+    print("=== Training Multinomial Naive Bayes ===")
     print("=" * 60)
     
     # Load data
@@ -336,20 +292,19 @@ def main():
     
     # Summary
     print("\n" + "="*60)
-    print("TRAINING SUMMARY (SNORKEL)")
+    print("TRAINING SUMMARY")
     print("="*60)
     print(f"Model: Multinomial Naive Bayes")
-    print(f"Feature: TF-IDF (5000 features, ngram_range=(1,3))")
-    print(f"Labeling: Snorkel Programmatic Labeling (14 functions)")
+    print(f"Feature: TF-IDF (3500 features, ngram_range=(1,2))")
     print(f"Test Accuracy: {accuracy:.4f}")
     print(f"CV Mean Accuracy: {cv_score:.4f}")
     print(f"Training samples: {len(X_train)}")
     print(f"Testing samples: {len(X_test)}")
     
     if accuracy >= 0.95:
-        print("\n✅ Model sangat akurat dengan labeling Snorkel!")
+        print("\n✅ Model sangat akurat dengan dataset!")
     elif accuracy >= 0.90:
-        print("\n✅ Model akurat dengan labeling Snorkel!")
+        print("\n✅ Model akurat dengan dataset!")
     else:
         print("\n⚠️  Model perlu improvement.")
     
