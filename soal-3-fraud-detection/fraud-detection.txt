@@ -1,0 +1,340 @@
+================================================================
+SOAL 3 - PROBLEM SOLVING
+Deteksi dan Pencegahan Kecurangan pada Proses Reimbursement
+================================================================
+
+----------------------------------------------------------------
+A. USULAN SOLUSI MENGGUNAKAN AI
+----------------------------------------------------------------
+
+Solusi yang diusulkan adalah sebuah sistem AI-powered Reimbursement
+Audit yang memanfaatkan Large Language Model (LLM) dengan kemampuan
+multimodal (teks + vision) sebagai core engine-nya.
+
+Sistem ini tidak menggunakan ML tradisional, melainkan memanfaatkan
+kemampuan reasoning dan pemahaman kontekstual dari LLM modern untuk
+mengevaluasi setiap klaim reimbursement secara otomatis.
+
+Tiga kasus fraud yang ditangani:
+
+  1. Penggunaan kartu kredit untuk keperluan non-bisnis
+  2. Nota belanja yang telah dimanipulasi
+  3. Pemalsuan atau mark-up perjalanan dinas
+
+
+----------------------------------------------------------------
+B. DATA YANG DIPERLUKAN
+----------------------------------------------------------------
+
+1. DATA INPUT PER KLAIM
+   - Foto nota / receipt (JPG, PNG, PDF)
+   - Narasi klaim dari karyawan (keperluan, tanggal, lokasi)
+   - Identitas karyawan (nama, departemen, jabatan/level)
+   - Dokumen pendukung perjalanan dinas (jika ada):
+     foto tiket, invoice hotel, form travel approval
+
+2. DATA KONTEKS PERUSAHAAN (diinject ke system prompt)
+   - Policy reimbursement perusahaan (limit per kategori,
+     kategori yang eligible/tidak eligible)
+   - Daftar merchant category yang diizinkan
+   - Level approval yang diperlukan per nominal
+
+3. DATA EKSTERNAL (real-time via pipeline)
+   - Harga referensi tiket pesawat, kereta, hotel
+     didapatkan secara real-time melalui web search pipeline
+     (SearXNG + Scrapling / Jina AI)
+
+4. METADATA FOTO (diekstrak otomatis via Python)
+   - EXIF data: tanggal pengambilan foto, device, GPS koordinat
+   - Software metadata: apakah foto pernah dibuka di editor
+   - Konsistensi file size vs resolusi
+
+
+----------------------------------------------------------------
+C. PIPELINE LENGKAP PER KASUS
+----------------------------------------------------------------
+
+== KASUS 1: Kartu Kredit Non-Bisnis ==
+
+  [Upload foto nota + narasi klaim karyawan]
+          ↓
+  [Ekstrak metadata EXIF via Python]
+  (piexif, Pillow, python-magic)
+          ↓
+  [Kirim ke Multimodal LLM]:
+  - Foto nota (vision)
+  - Narasi klaim karyawan (teks)
+  - Metadata EXIF (teks)
+  - Konteks karyawan: jabatan, departemen (teks)
+  - Policy perusahaan (teks)
+          ↓
+  [LLM evaluate]:
+  - Apakah merchant dan item relevan dengan keperluan bisnis?
+  - Apakah amount wajar untuk jabatan/departemen karyawan?
+  - Apakah ada indikasi pembelian pribadi?
+          ↓
+  [Output]: Status + Confidence + Alasan + Red Flags
+
+
+== KASUS 2: Nota yang Dimanipulasi ==
+
+  [Upload foto nota]
+          ↓
+  [Ekstrak metadata EXIF via Python]
+  - Cek field "Software" (Photoshop/GIMP = red flag)
+  - Cek DateTimeOriginal vs DateTime (inkonsistensi = red flag)
+  - Cek GPS koordinat vs lokasi merchant yang diklaim
+  - Cek file size anomali
+          ↓
+  [Kirim ke Multimodal LLM]:
+  - Foto nota (vision)
+  - Metadata EXIF lengkap (teks)
+  - Klaim karyawan (teks)
+          ↓
+  [LLM evaluate dua lapis]:
+  Layer 1 - Authenticity Check:
+  - Konsistensi font pada seluruh nota
+  - Alignment angka dan kolom harga
+  - Pixelation / blur di area tertentu
+  - Kesesuaian total dengan penjumlahan item
+  - Kewajaran tanggal dan jam (hari libur? jam tutup?)
+  - Apakah metadata mengindikasikan file pernah diedit?
+
+  Layer 2 - Relevance Check:
+  - Apakah pembelian relevan dengan keperluan bisnis?
+  - Apakah amount sesuai policy?
+          ↓
+  [Output]: Status + Confidence + Alasan + Red Flags
+
+
+== KASUS 3: Perjalanan Dinas Palsu / Mark-up ==
+
+  [Karyawan submit klaim perjalanan dinas]
+  (foto tiket, invoice hotel, form TA, narasi perjalanan)
+          ↓
+  [LLM ekstrak keyword pencarian dari dokumen]:
+  Contoh output:
+  {
+    "query": "harga tiket Lion Air Bali Jakarta Januari 2024",
+    "domain_target": ["lionair.co.id", "traveloka.com", "tiket.com"],
+    "data_yang_dicari": "harga tiket one way"
+  }
+          ↓
+  [SearXNG] → query keyword → dapat daftar URL relevan
+          ↓
+  [Jina AI / Scrapling] → scrape konten URL
+  (Jina AI sebagai primary, Scrapling sebagai fallback
+   untuk site yang JS-heavy)
+          ↓
+  [LLM ekstrak harga dari hasil scrape]
+  → dapatkan range harga pasar untuk rute/tanggal tersebut
+          ↓
+  [LLM compare & evaluate]:
+  - Harga yang diklaim vs range harga pasar
+  - Kesesuaian tanggal tiket dengan form travel approval
+  - Kewajaran durasi menginap vs jarak perjalanan
+  - Konsistensi lokasi GPS nota vs lokasi yang diklaim
+          ↓
+  [Output]: Status + Confidence + Alasan + Red Flags
+
+
+----------------------------------------------------------------
+D. STRUKTUR SYSTEM PROMPT
+----------------------------------------------------------------
+
+System prompt dirancang berlapis untuk menghasilkan evaluasi
+yang konsisten dan berkualitas tinggi:
+
+  LAYER 1 - Role & Persona
+  ------------------------
+  "Kamu adalah sistem audit reimbursement internal perusahaan.
+  Tugasmu mengevaluasi setiap klaim secara objektif, konservatif,
+  dan berbasis bukti. Jika terdapat keraguan, flag sebagai
+  'perlu review manual' daripada langsung approve."
+
+  LAYER 2 - Business Rules (inject dari policy perusahaan)
+  --------------------------------------------------------
+  "Policy reimbursement perusahaan:
+  - Meal allowance maksimal: [sesuai policy]
+  - Entertainment wajib ada pre-approval manager
+  - Kategori TIDAK eligible: grocery, fashion, spa, hiburan pribadi
+  - Perjalanan dinas wajib ada form Travel Authorization approved
+  - Hotel maksimal bintang [X] untuk level [jabatan]"
+
+  LAYER 3 - Evaluation Criteria
+  ------------------------------
+  "Evaluasi berdasarkan:
+  1. Keaslian dokumen (font, alignment, metadata, total calculation)
+  2. Relevansi merchant/pembelian dengan keperluan bisnis
+  3. Kesesuaian klaim dengan policy perusahaan
+  4. Kewajaran amount vs harga pasar (untuk perjalanan dinas)
+  5. Konsistensi tanggal, lokasi, dan konteks"
+
+  LAYER 4 - Output Format (wajib terstruktur)
+  -------------------------------------------
+  "Berikan output dalam format berikut:
+  - Status     : APPROVED / FLAGGED / REJECTED
+  - Confidence : HIGH / MEDIUM / LOW
+  - Alasan     : [spesifik dan berbasis bukti, bukan generik]
+  - Red Flags  : [list temuan mencurigakan jika ada]
+  - Rekomendasi: [tindakan yang disarankan]"
+
+
+----------------------------------------------------------------
+E. INFRASTRUKTUR MINIMAL
+----------------------------------------------------------------
+
+KOMPONEN UTAMA:
+
+  1. APPLICATION SERVER
+     - VPS minimal 2 vCPU, 4GB RAM
+     - OS: Ubuntu 22.04 LTS
+     - Stack: Python (FastAPI) atau Laravel sebagai backend
+
+  2. LLM PROVIDER
+     - API akses ke multimodal LLM
+       (contoh: Claude claude-sonnet, GPT-4o, atau Gemini)
+     - Tidak perlu GPU server sendiri karena menggunakan
+       API provider eksternal
+
+  3. METADATA EXTRACTION
+     - Python libraries: piexif, Pillow, python-magic, hachoir
+     - Berjalan di application server yang sama
+
+  4. WEB SEARCH PIPELINE (untuk validasi perjalanan dinas)
+     - SearXNG: self-hosted search engine (Docker container)
+       Minimal: 1 vCPU, 512MB RAM
+     - Jina AI: via API (jina.ai) sebagai primary scraper
+     - Scrapling: Python library sebagai fallback scraper
+
+  5. DATABASE
+     - PostgreSQL untuk menyimpan histori klaim dan hasil audit
+     - Minimal: 20GB storage untuk awal
+
+  6. ANTARMUKA (opsional untuk MVP)
+     - Form submission sederhana untuk upload nota + isian klaim
+     - Dashboard untuk tim HR/Finance melihat hasil audit
+     - Bisa dibangun dengan framework yang sudah familiar
+
+ESTIMASI BIAYA INFRASTRUKTUR MINIMAL:
+  - VPS          : ~$20-40/bulan
+  - LLM API      : pay-per-use (bergantung volume klaim)
+  - Jina AI      : free tier tersedia, ~$20/bulan untuk skala sedang
+  - SearXNG      : self-hosted, tidak ada biaya tambahan
+  - Total estimasi: ~$50-80/bulan untuk skala perusahaan menengah
+
+
+ARSITEKTUR SEDERHANA:
+
+  [Karyawan] → [Form Submission]
+                      ↓
+              [Application Server]
+              ├── Metadata Extractor (Python)
+              ├── Keyword Generator (LLM)
+              ├── Search Pipeline (SearXNG → Jina/Scrapling)
+              └── Audit Engine (Multimodal LLM)
+                      ↓
+              [Database] ← simpan hasil audit
+                      ↓
+              [Dashboard HR/Finance]
+              └── Review manual untuk klaim FLAGGED
+
+
+----------------------------------------------------------------
+F. ALASAN PEMILIHAN AI DIBANDING ML TRADISIONAL
+----------------------------------------------------------------
+
+ALASAN UTAMA PEMILIHAN AI:
+
+  1. FLEKSIBILITAS DAN MANUVER TINGGI
+     Pola fraud reimbursement sangat beragam dan terus berkembang.
+     Dengan AI berbasis LLM, penyesuaian terhadap pola fraud baru
+     atau perubahan policy perusahaan cukup dilakukan dengan
+     mengubah system prompt — tanpa perlu retraining model,
+     tanpa downtime, dan tanpa biaya engineering yang besar.
+     ML tradisional memerlukan siklus pengumpulan data baru,
+     labeling, retraining, dan re-deployment setiap kali
+     ada perubahan.
+
+  2. DAYA TAHAN TERHADAP DATA TIDAK TERSTRUKTUR
+     Fraud reimbursement melibatkan data yang sangat heterogen:
+     foto nota dengan berbagai format, narasi klaim dalam bahasa
+     natural, metadata teknis dari EXIF, hingga hasil scraping
+     halaman web travel. ML tradisional memerlukan feature
+     engineering yang kompleks dan terpisah untuk setiap jenis
+     data ini. LLM multimodal dapat memproses semua jenis data
+     tersebut dalam satu pipeline yang terintegrasi, dengan
+     kemampuan reasoning lintas konteks.
+
+  3. ZERO TRAINING DATA REQUIREMENT
+     Data fraud reimbursement di perusahaan bersifat langka
+     dan hampir tidak pernah terlabeli dengan baik. ML tradisional
+     membutuhkan ratusan hingga ribuan contoh fraud yang telah
+     diverifikasi untuk dapat berfungsi. AI berbasis LLM dapat
+     langsung beroperasi dari hari pertama tanpa historical data,
+     karena model sudah memiliki pemahaman umum tentang dokumen,
+     harga, dan konteks bisnis.
+
+
+KEUNTUNGAN AI:
+  + Tidak membutuhkan labeled training data
+  + Dapat langsung digunakan (time-to-value lebih cepat)
+  + Fleksibel terhadap perubahan policy (cukup update prompt)
+  + Mampu handle unstructured data secara native
+  + Bisa reasoning konteks ambigu secara natural
+  + Pipeline tunggal untuk berbagai jenis fraud
+  + Integrasi mudah dengan tools eksternal (search, scraper)
+
+KEKURANGAN AI:
+  - Inference cost lebih tinggi per request dibanding ML
+  - Hasil bersifat probabilistik, tidak selalu 100% konsisten
+  - Bergantung pada koneksi internet dan LLM provider eksternal
+  - Lebih sulit diaudit secara teknis (black box reasoning)
+  - Membutuhkan prompt engineering yang baik untuk hasil optimal
+
+
+----------------------------------------------------------------
+G. PERBANDINGAN AI VS ML TRADISIONAL
+----------------------------------------------------------------
+
++----------------------+-------------------------+-------------------------+
+| Aspek                | AI (LLM Multimodal)     | ML Tradisional          |
++----------------------+-------------------------+-------------------------+
+| Training Data        | Tidak dibutuhkan        | Butuh ratusan-ribuan    |
+|                      |                         | labeled samples         |
++----------------------+-------------------------+-------------------------+
+| Time to Deploy       | Cepat (hari/minggu)     | Lama (bulan)            |
++----------------------+-------------------------+-------------------------+
+| Adaptasi Policy Baru | Update prompt saja      | Perlu retraining model  |
++----------------------+-------------------------+-------------------------+
+| Unstructured Data    | Native support          | Butuh feature           |
+| (foto, teks bebas)   |                         | engineering kompleks    |
++----------------------+-------------------------+-------------------------+
+| Konsistensi Hasil    | Probabilistik           | Deterministik           |
++----------------------+-------------------------+-------------------------+
+| Inference Cost       | Lebih tinggi per call   | Rendah setelah trained  |
++----------------------+-------------------------+-------------------------+
+| Explainability       | Natural language        | Feature importance,     |
+|                      | reasoning               | tapi kurang kontekstual |
++----------------------+-------------------------+-------------------------+
+| Penanganan Pola      | Fleksibel, bisa handle  | Terbatas pada pola      |
+| Fraud Baru           | pola yang belum pernah  | yang ada di training    |
+|                      | dilihat sebelumnya      | data                    |
++----------------------+-------------------------+-------------------------+
+| Ketergantungan       | LLM provider eksternal  | Mandiri setelah         |
+| Eksternal            |                         | model di-deploy         |
++----------------------+-------------------------+-------------------------+
+| Cocok untuk kasus    | ✓ Sangat cocok          | ✗ Sulit diterapkan      |
+| fraud reimbursement  | (data langka,           | (butuh data fraud       |
+|                      | data heterogen)         | historis yang cukup)    |
++----------------------+-------------------------+-------------------------+
+
+KESIMPULAN:
+Untuk kasus fraud reimbursement, AI berbasis LLM multimodal
+adalah pilihan yang jauh lebih pragmatis dan efektif dibanding
+ML tradisional. Kunci pertimbangannya adalah kelangkaan data
+fraud historis yang terlabeli, keberagaman format data yang
+terlibat, serta kebutuhan fleksibilitas tinggi terhadap
+perubahan pola fraud dan policy perusahaan yang dinamis.
+
+================================================================
