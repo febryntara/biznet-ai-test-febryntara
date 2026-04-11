@@ -728,53 +728,45 @@ Is there a loyalty program for 5-year customers?,Information
 Apply the 5-year loyalty discount to my current monthly bill.,Request
 How do I whitelist a MAC address on my router?,Information
 Whitelist this MAC address: AA:BB:CC:11:22:33 for my PC.,Request
-What is the specific bandwidth ratio between upload and download for the 100mbps...,Information
 Does the fiber optic technology used in this area support symmetrical speeds?,Information
-Are there any planned network optimizations that might affect connection stabili...,Information
-How does the ISP handle data encryption to ensure secure browsing for home users...,Information
-What are the technical specifications of the latest Wi-Fi 6 router provided by t...,Information
-Is it possible to track the real-time location of the technician arriving for my...,Information
-What is the standard procedure for getting a refund if a payment was deducted tw...,Information
-Are there any specific weather conditions that could physically damage the outdo...,Information
-How can I find out if my current router firmware is vulnerable to recent securit...,Information
-What is the difference in latency when using your DNS versus a public one like C...,Information
-Is there a loyalty tier for customers who have maintained an active account for ...,Information
-What are the power requirements for the ONT to ensure it doesn't short circuit d...,Information
-How is the Fair Usage Policy (FUP) calculated if I have multiple add-on data pac...,Information
-Are there any legal restrictions on hosting a private Minecraft server on a home...,Information
-What are the bank administrative codes required for setting up an auto-payment v...,Information
-Is there a way to verify if a neighbor is tapping into my Wi-Fi signal without p...,Information
 What is the maximum range of the 5GHz signal in a house with thick brick walls?,Information
-How do I differentiate between a localized modem failure and a broader regional ...,Information
-Are the Set-Top Boxes provided for TV services compatible with 4K HDR10 technolo...,Information
-What documents are officially required to move a subscription from a residential...,Information
-Is there a specific period during the night when the system automatically resets...,Information
-How can I check the status of my area's fiber coverage expansion through the off...,Information
-What is the standard response time for a critical technical ticket in a suburban...,Information
-Are there any built-in parental control features that work directly at the hardw...,Information
-How does the ISP prioritize traffic for video conferencing apps like Zoom and Mi...,Information
-What is the replacement cost for an ONT device if it is damaged by a lightning s...,Information
-Is it possible to access the router's internal logs to see connection drop histo...,Information
-What are the terms regarding the return of equipment after a contract has natura...,Information
-How can I confirm if my payment made via a third-party kiosk has been reconciled...,Information
-Are there any specific frequency bands that might interfere with the router's 2....,Information
-What is the process for a foreigner to register for an internet account using a ...,Information
-Is there a mobile app feature that allows me to reboot the router from a remote ...,Information
-How do I know if the slow speed is caused by a faulty LAN cable or the ISP's net...,Information
-What are the benefits of the 'Fixed IP' service compared to the standard dynamic...,Information
-Are there any promotional bundles that combine home fiber with mobile data plans...,Information
-What is the exact deadline for bill payments before a late fee is automatically ...,Information
-How can I find out the results of the signal survey conducted in my apartment bu...,Information
-Is there a technical manual available for the provided STB to understand error c...,Information
-What happens to the internet speed if the fiber cable is bent at a sharp 90-degr...,Information
-How do I verify the authenticity of an email claiming to be from the billing dep...,Information
-Is there a maximum number of devices that can be connected before the IP pool is...,Information
 What are the criteria for receiving a free hardware upgrade to the latest model?,Information
-How is the prorated bill calculated if I join during a leap year or a 31-day mon...,Information
-Are there any specific antivirus software brands that are recommended for use wi...,Information
-What is the estimated uptime percentage guaranteed for the premium residential p...,Information
-How do I check if my account is eligible for a temporary speed boost during the ...,Information
 Is the fiber optic cable used in this district fire-resistant or heat-protected?,Information
 What are the security protocols used for the provider's public Wi-Fi hotspots?,Information
-How can I see a list of all devices that have historically connected to my home ...,Information
 Is there a dedicated support line for expats who require assistance in English?,Information
+my internet has been stuck on no internet secured even after several restarts,Problem
+the wifi connection keeps dropping whenever there is heavy rain,Problem
+i cannot access the router admin dashboard and the default password is not working,Problem
+the LOS indicator on my modem has been blinking red since this morning,Problem
+the ping is extremely high during online gaming even though no one is downloading,Problem
+the mobile app shows my status as active but i cannot connect at all,Problem
+the fiber optic cable in front of my house is sagging and almost touching the asphalt,Problem
+i already paid via mobile banking but the app still shows an outstanding balance,Problem
+an IP Configuration Failure message appears every time i try to connect my phone,Problem
+download speeds are normal but the upload speed is not moving at all,Problem
+the parental control feature on the website is not working to block specific sites,Problem
+the modem feels extremely hot and keeps shutting down by itself,Problem
+why is my netflix only streaming in SD quality despite being on a 100mbps plan,Problem
+i received a billing email addressed to someone else in my inbox,Problem
+the LAN cable connection is intermittent even though i replaced the cable,Problem
+every time i turn on the TV box the internet connection on other devices slows down,Problem
+i am not receiving the OTP code when trying to login to the latest app,Problem
+my account status is shown as Isolated even though i always pay on time,Problem
+the newly installed range extender cannot synchronize with the main router,Problem
+i cannot access my office website because it seems to be blocked by the ISP,Problem
+my bill this month spiked because of add-on charges i never purchased,Problem
+the audio on the cable TV channels is distorted and the picture keeps freezing,Problem
+the browser shows DNS Probe Finished No Internet on all my devices,Problem
+the technician who was supposed to arrive today never showed up without notice,Problem
+i cannot change my SSID name and it always shows a Request Timeout error,Problem
+the USB port on the modem cannot read my external hard drive,Problem
+why has my wifi range become so short that it only reaches the front of my room,Problem
+i am being accused of violating the FUP even though my usage this month is very low,Problem
+there is a small electrical leakage when i touch the body of the modem,Problem
+the email verification link sent by the system was already expired when clicked,Problem
+the landline phone service bundled with my internet has a lot of static noise,Problem
+the plan upgrade is complete but the speed is still stuck on the old package,Problem
+i accidentally paid twice for the same invoice how do i fix this,Problem
+a yellow exclamation mark appears on the wifi icon for all laptops in the house,Problem
+why can i not access certain banking websites using this network,Problem
+my modem device is making a high-pitched buzzing sound that is very annoying,Problem
