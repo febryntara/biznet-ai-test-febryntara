@@ -288,7 +288,7 @@ def test_examples(pipeline, label_mapping):
         ("The application crashes every time",            "Problem"),
         ("My internet is very slow today",                "Problem"),
         ("I was charged twice for this month",            "Problem"),
-        ("Cannot login to my account",                    "Problem"),
+        ("my internet connection is gone",                "Problem"),
         ("Modem keeps disconnecting every few minutes",   "Problem"),
     ]
 
